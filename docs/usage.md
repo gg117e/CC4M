@@ -85,33 +85,6 @@ make lint
 
 `requirements-dev.txt` pulls in `requirements-web.txt` plus `pytest` and `ruff`.
 
-## Batch / Advanced CLI
-
-`python main.py <subcommand>` dispatches into `src/commands/`. Subcommands:
-`run-all-steps`, `generate-dataset`, `determine-analyzed-commits`,
-`refresh-service-map`, `check-run-all-steps`, `summarize-csv`, `csv-boxplot`,
-`web-ui`.
-
-Batch analysis in Docker:
-
-```bash
-docker compose build
-docker compose run --rm analysis analyze --project owner.repo
-```
-
-POSIX shortcut:
-
-```bash
-make analyze PROJECT=owner.repo
-```
-
-`run-all-steps` can resume:
-
-| Option | Meaning |
-|---|---|
-| `--start-index` / `--start-number` / `--start-url` | where to begin |
-| `--only-index` / `--only-number` / `--only-url` | run a single project |
-| `--from-step` | resume at `collect` / `analyze-cc` / `analyze-modification` |
 
 ## CCFinderSW Settings
 
