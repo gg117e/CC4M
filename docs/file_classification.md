@@ -1,69 +1,87 @@
-# File Classification and Service Mapping
+# File Classification
 
-This document describes how CC4M interprets a fragment's file path: repo-relative
-normalization, service-boundary resolution, and the file-category classifier
-used as `file_type`. The descriptions are taken directly from
-`src/modules/util.py` and `src/modules/visualization/service_mapping.py`.
+This document describes the file-category classifier (`file_type`) used by
+CC4M and how clone pairs are classified based on those categories.
 
-## Repo-Relative Paths
+The implementation lives in [src/modules/util.py](../src/modules/util.py)
+(`get_file_type`) and
+[src/visualize/callbacks/filter_callbacks.py](../src/visualize/callbacks/filter_callbacks.py)
+(`_classify_clone_sets`).
 
-Inside `FileMapper` (`src/modules/util.py`) each CCFinderSW `file_path` is made
-repo-relative by stripping the `project_dir + "/"` prefix. All downstream paths
-(`enriched_fragments.csv`, scatter CSV, metrics) use this repo-relative form.
+---
 
-## Service-Boundary Resolution
+## File Categories
 
-`service_mapping.py` resolves the owning microservice of a file path:
+Every fragment is tagged with one of four categories.
 
-- `normalize_repo_relative_path(path)` normalizes a path to a `/`-separated
-  repo-relative string.
-- Service contexts come from CLAIM (`load_claim_service_contexts_for_repo`,
-  reading `dest/ms_detection/<repo>.csv`) or from a cached
-  `dest/services_json/<repo>.json` (`load_service_contexts_from_json`). Each is a
-  `ServiceContext(service_name, context, source)` where `context` is the
-  repo-relative directory that defines the service boundary.
-- `resolve_service_for_file_path` / `choose_longest_prefix_match` assign a file
-  to the service whose `context` is the **longest prefix** of the file path.
-- If no context matches, the fragment's `service` becomes `""` (unresolved).
-  Unresolved fragments are excluded from service counting and cross-service
-  decisions in the metrics (see [metrics.md](metrics.md)).
+| Category | Meaning |
+|----------|---------|
+| `test` | Test code |
+| `data` | Schemas, migrations, DTOs, etc. |
+| `config` | Configuration files |
+| `logic` | Everything else (application logic) |
 
-This longest-prefix matching is what turns a clone pair into an *inter-service*
-or *within-service* clone (see [definitions.md](definitions.md)).
+Classification is based on **path and extension only** — file contents are
+never read.
 
-## File-Category Classifier (`file_type`)
+### Priority
 
-`get_file_type(file_path, *, language=None)` in `src/modules/util.py` tags each
-fragment with one of four categories: `test`, `data`, `config`, `logic`. The
-classifier is **path- and extension-based only** (it does not read file
-contents). It runs in two stages.
+Rules are evaluated in this order; the first match wins.
 
-**Stage 1 - path signal** (`_get_file_type_from_path`), first match wins, in
-this order:
+| Order | Category | Condition |
+|-------|----------|-----------|
+| 1 | `test` | Path contains any test indicator |
+| 2 | `config` | File name matches a known config-file name |
+| 3 | `config` | Extension is in the config set |
+| 4 | `config` | Path contains a config directory |
+| 5 | `data` | Path contains a data indicator |
+| 6 | `data` | Extension is in the data set |
+| 7 | `logic` | None of the above |
 
-1. `test` - path contains any test indicator:
-   `/test/`, `/tests/`, `/test_`, `test_`, `_test.`, `.test.`, `/spec/`,
-   `/specs/`, `_spec.`, `.spec.`, `/__tests__/`.
-2. `config` - file name is a known config name
-   (e.g. `dockerfile`, `docker-compose.yml`, `makefile`, `.env`,
-   `package.json`, `tsconfig.json`, `setup.py`, `pyproject.toml`, `pom.xml`,
-   `build.gradle`, `cargo.toml`, `go.mod`, `requirements.txt`, `gemfile`, and
-   the common JS tool configs).
-3. `config` - extension in `.yml`, `.yaml`, `.toml`, `.ini`, `.cfg`, `.conf`.
-4. `config` - path contains a config directory: `/config/`, `/configs/`,
-   `/.github/`, `/.circleci/`.
-5. `data` - path contains a data indicator: `/entity/`, `/entities/`, `/dto/`,
-   `/proto/`, `/migration/`, `/migrations/`, `/seed/`, `/seeds/`, `/fixture/`,
-   `/fixtures/`.
-6. `data` - extension in `.sql`, `.graphql`, `.proto`, `.avsc`.
-7. Otherwise `logic`.
+### Lookup tables
 
-**Stage 2 - extension fallback** (only when stage 1 returns `logic`): extension
-in the config set returns `config`, extension in the data set returns `data`,
-otherwise `logic`.
+**Test indicators** (path substring)
+`/test/`, `/tests/`, `/test_`, `test_`, `_test.`, `.test.`,
+`/spec/`, `/specs/`, `_spec.`, `.spec.`, `/__tests__/`
 
-The `language` argument is currently accepted but unused; it is kept so that
-language-specific rules can be added without changing call sites.
+**Config file names** (exact match)
+`dockerfile`, `docker-compose.yml`, `docker-compose.yaml`, `makefile`, `.env`,
+`tsconfig.json`, `package.json`, `setup.py`, `setup.cfg`, `pyproject.toml`,
+`pom.xml`, `build.gradle`, `build.sbt`, `cargo.toml`, `go.mod`,
+`.eslintrc`, `.prettierrc`, `.babelrc`,
+`jest.config.js`, `webpack.config.js`, `rollup.config.js`, `vite.config.ts`,
+`nginx.conf`, `requirements.txt`, `gemfile`
 
-`file_type` is attached to every row of `enriched_fragments.csv` and to the
-scatter dataset, and is used as a categorical filter in the visualization.
+**Config extensions**
+`.yml`, `.yaml`, `.toml`, `.ini`, `.cfg`, `.conf`
+
+**Config directories** (path substring)
+`/config/`, `/configs/`, `/.github/`, `/.circleci/`
+
+**Data indicators** (path substring)
+`/entity/`, `/entities/`, `/dto/`, `/proto/`,
+`/migration/`, `/migrations/`, `/seed/`, `/seeds/`,
+`/fixture/`, `/fixtures/`
+
+**Data extensions**
+`.sql`, `.graphql`, `.proto`, `.avsc`
+
+---
+
+## Clone-Pair Classification
+
+Clone sets are classified by the set of `file_type` values appearing across
+their fragments
+(see `_classify_clone_sets` in
+[filter_callbacks.py](../src/visualize/callbacks/filter_callbacks.py)).
+
+| Clone-set category | Condition |
+|--------------------|-----------|
+| `test` | All fragments are `test` |
+| `data` | All fragments are `data` |
+| `config` | All fragments are `config` |
+| `logic` | No `test` fragment, and types are a subset of `{logic, data, config}` (i.e. pure logic, or a mix of non-test categories) |
+| `mixed` | At least one `test` fragment **and** at least one non-`test` fragment |
+
+In short, `mixed` flags clone pairs that span the test / non-test boundary.
+This is the category used by the visualization's *Mixed* filter.
