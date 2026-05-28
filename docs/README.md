@@ -5,7 +5,7 @@ Curated documentation for CC4M.
 | Document | Contents |
 |---|---|
 | [architecture.md](architecture.md) | Components, data pipeline, web stack |
-| [usage.md](usage.md) | Entry points, tests, batch CLI, settings |
+| [usage.md](usage.md) | Entry points, tests, settings |
 | [definitions.md](definitions.md) | Terminology (clone set, inter/within-service, co-modification, ...) |
 | [metrics.md](metrics.md) | Clone metrics, verified against the implementation |
 | [declaration_line_filtering.md](declaration_line_filtering.md) | Declaration-line filtering before clone detection |
