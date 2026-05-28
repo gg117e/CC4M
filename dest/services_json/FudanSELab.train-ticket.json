@@ -1,0 +1,580 @@
+{
+  "services": {
+    "ts-admin-route-service/": [
+      "ts-admin-route-service"
+    ],
+    "ts-admin-travel-service/": [
+      "ts-admin-travel-service"
+    ],
+    "ts-rebook-service/": [
+      "ts-rebook-service"
+    ],
+    "ts-price-service/": [
+      "ts-price-service"
+    ],
+    "ts-travel2-service/": [
+      "ts-travel2-service"
+    ],
+    "ts-basic-service/": [
+      "ts-basic-service"
+    ],
+    "ts-order-other-service/": [
+      "ts-order-other-service"
+    ],
+    "ts-train-service/": [
+      "ts-train-service"
+    ],
+    "ts-news-service/": [
+      "ts-news-service"
+    ],
+    "ts-notification-service/": [
+      "ts-notification-service"
+    ],
+    "ts-verification-code-service/": [
+      "ts-verification-code-service"
+    ],
+    "ts-consign-price-service/": [
+      "ts-consign-price-service"
+    ],
+    "ts-voucher-service/": [
+      "ts-voucher-service"
+    ],
+    "ts-user-service/": [
+      "ts-user-service"
+    ],
+    "ts-travel-service/": [
+      "ts-travel-service"
+    ],
+    "ts-preserve-other-service/": [
+      "ts-preserve-other-service"
+    ],
+    "ts-preserve-service/": [
+      "ts-preserve-service"
+    ],
+    "ts-execute-service/": [
+      "ts-execute-service"
+    ],
+    "ts-consign-service/": [
+      "ts-consign-service"
+    ],
+    "ts-cancel-service/": [
+      "ts-cancel-service"
+    ],
+    "ts-config-service/": [
+      "ts-config-service"
+    ],
+    "ts-contacts-service/": [
+      "ts-contacts-service"
+    ],
+    "ts-travel-plan-service/": [
+      "ts-travel-plan-service"
+    ],
+    "ts-station-service/": [
+      "ts-station-service"
+    ],
+    "ts-seat-service/": [
+      "ts-seat-service"
+    ],
+    "ts-admin-user-service/": [
+      "ts-admin-user-service"
+    ],
+    "ts-ui-dashboard/": [
+      "ts-ui-dashboard"
+    ],
+    "ts-ticketinfo-service/": [
+      "ts-ticketinfo-service"
+    ],
+    "ts-ticket-office-service/": [
+      "ts-ticket-office-service"
+    ],
+    "ts-admin-order-service/": [
+      "ts-admin-order-service"
+    ],
+    "ts-food-service/": [
+      "ts-food-service"
+    ],
+    "ts-food-map-service/": [
+      "ts-food-map-service"
+    ],
+    "ts-auth-service/": [
+      "ts-auth-service"
+    ],
+    "ts-assurance-service/": [
+      "ts-assurance-service"
+    ],
+    "ts-security-service/": [
+      "ts-security-service"
+    ],
+    "ts-order-service/": [
+      "ts-order-service"
+    ],
+    "ts-admin-basic-info-service/": [
+      "ts-admin-basic-info-service"
+    ],
+    "ts-route-service/": [
+      "ts-route-service"
+    ],
+    "ts-route-plan-service/": [
+      "ts-route-plan-service"
+    ],
+    "ts-payment-service/": [
+      "ts-payment-service"
+    ],
+    "ts-inside-payment-service/": [
+      "ts-inside-payment-service"
+    ]
+  },
+  "URL": "https://github.com/FudanSELab/train-ticket",
+  "language_stats": {
+    "Python": {
+      "services": {
+        "ts-voucher-service": {
+          "file_count": 1,
+          "total_loc": 157
+        }
+      },
+      "total_files": 5,
+      "total_loc": 360,
+      "unresolved_files": 4,
+      "unresolved_loc": 203,
+      "file_ranges": {
+        "ts-voucher-service": [
+          [
+            4,
+            4
+          ]
+        ]
+      }
+    },
+    "Java": {
+      "services": {
+        "ts-admin-basic-info-service": {
+          "file_count": 12,
+          "total_loc": 1503
+        },
+        "ts-admin-order-service": {
+          "file_count": 10,
+          "total_loc": 845
+        },
+        "ts-admin-route-service": {
+          "file_count": 9,
+          "total_loc": 452
+        },
+        "ts-admin-travel-service": {
+          "file_count": 14,
+          "total_loc": 890
+        },
+        "ts-admin-user-service": {
+          "file_count": 12,
+          "total_loc": 670
+        },
+        "ts-assurance-service": {
+          "file_count": 13,
+          "total_loc": 992
+        },
+        "ts-auth-service": {
+          "file_count": 24,
+          "total_loc": 1129
+        },
+        "ts-basic-service": {
+          "file_count": 16,
+          "total_loc": 910
+        },
+        "ts-cancel-service": {
+          "file_count": 19,
+          "total_loc": 1235
+        },
+        "ts-config-service": {
+          "file_count": 10,
+          "total_loc": 634
+        },
+        "ts-consign-price-service": {
+          "file_count": 10,
+          "total_loc": 563
+        },
+        "ts-consign-service": {
+          "file_count": 12,
+          "total_loc": 751
+        },
+        "ts-contacts-service": {
+          "file_count": 11,
+          "total_loc": 874
+        },
+        "ts-execute-service": {
+          "file_count": 10,
+          "total_loc": 807
+        },
+        "ts-food-map-service": {
+          "file_count": 15,
+          "total_loc": 846
+        },
+        "ts-food-service": {
+          "file_count": 14,
+          "total_loc": 845
+        },
+        "ts-inside-payment-service": {
+          "file_count": 24,
+          "total_loc": 1726
+        },
+        "ts-notification-service": {
+          "file_count": 12,
+          "total_loc": 690
+        },
+        "ts-order-other-service": {
+          "file_count": 20,
+          "total_loc": 2019
+        },
+        "ts-order-service": {
+          "file_count": 20,
+          "total_loc": 2072
+        },
+        "ts-payment-service": {
+          "file_count": 12,
+          "total_loc": 543
+        },
+        "ts-preserve-other-service": {
+          "file_count": 32,
+          "total_loc": 1950
+        },
+        "ts-preserve-service": {
+          "file_count": 33,
+          "total_loc": 1945
+        },
+        "ts-price-service": {
+          "file_count": 11,
+          "total_loc": 741
+        },
+        "ts-rebook-service": {
+          "file_count": 23,
+          "total_loc": 1525
+        },
+        "ts-route-plan-service": {
+          "file_count": 17,
+          "total_loc": 1086
+        },
+        "ts-route-service": {
+          "file_count": 11,
+          "total_loc": 790
+        },
+        "ts-seat-service": {
+          "file_count": 14,
+          "total_loc": 1002
+        },
+        "ts-security-service": {
+          "file_count": 14,
+          "total_loc": 918
+        },
+        "ts-station-service": {
+          "file_count": 10,
+          "total_loc": 812
+        },
+        "ts-ticketinfo-service": {
+          "file_count": 13,
+          "total_loc": 549
+        },
+        "ts-train-service": {
+          "file_count": 10,
+          "total_loc": 637
+        },
+        "ts-travel-plan-service": {
+          "file_count": 19,
+          "total_loc": 1231
+        },
+        "ts-travel-service": {
+          "file_count": 25,
+          "total_loc": 1903
+        },
+        "ts-travel2-service": {
+          "file_count": 25,
+          "total_loc": 1952
+        },
+        "ts-user-service": {
+          "file_count": 13,
+          "total_loc": 814
+        },
+        "ts-verification-code-service": {
+          "file_count": 8,
+          "total_loc": 995
+        }
+      },
+      "total_files": 740,
+      "total_loc": 52814,
+      "unresolved_files": 163,
+      "unresolved_loc": 12968,
+      "file_ranges": {
+        "ts-admin-basic-info-service": [
+          [
+            728,
+            739
+          ]
+        ],
+        "ts-admin-order-service": [
+          [
+            26,
+            35
+          ]
+        ],
+        "ts-admin-route-service": [
+          [
+            428,
+            436
+          ]
+        ],
+        "ts-admin-travel-service": [
+          [
+            612,
+            625
+          ]
+        ],
+        "ts-admin-user-service": [
+          [
+            391,
+            402
+          ]
+        ],
+        "ts-assurance-service": [
+          [
+            192,
+            204
+          ]
+        ],
+        "ts-auth-service": [
+          [
+            513,
+            536
+          ]
+        ],
+        "ts-basic-service": [
+          [
+            10,
+            25
+          ]
+        ],
+        "ts-cancel-service": [
+          [
+            205,
+            223
+          ]
+        ],
+        "ts-config-service": [
+          [
+            595,
+            604
+          ]
+        ],
+        "ts-consign-price-service": [
+          [
+            718,
+            727
+          ]
+        ],
+        "ts-consign-service": [
+          [
+            696,
+            707
+          ]
+        ],
+        "ts-contacts-service": [
+          [
+            337,
+            347
+          ]
+        ],
+        "ts-execute-service": [
+          [
+            708,
+            717
+          ]
+        ],
+        "ts-food-map-service": [
+          [
+            570,
+            584
+          ]
+        ],
+        "ts-food-service": [
+          [
+            480,
+            493
+          ]
+        ],
+        "ts-inside-payment-service": [
+          [
+            238,
+            261
+          ]
+        ],
+        "ts-notification-service": [
+          [
+            448,
+            459
+          ]
+        ],
+        "ts-order-other-service": [
+          [
+            371,
+            390
+          ]
+        ],
+        "ts-order-service": [
+          [
+            460,
+            479
+          ]
+        ],
+        "ts-payment-service": [
+          [
+            626,
+            637
+          ]
+        ],
+        "ts-preserve-other-service": [
+          [
+            262,
+            293
+          ]
+        ],
+        "ts-preserve-service": [
+          [
+            537,
+            569
+          ]
+        ],
+        "ts-price-service": [
+          [
+            494,
+            504
+          ]
+        ],
+        "ts-rebook-service": [
+          [
+            348,
+            370
+          ]
+        ],
+        "ts-route-plan-service": [
+          [
+            320,
+            336
+          ]
+        ],
+        "ts-route-service": [
+          [
+            437,
+            447
+          ]
+        ],
+        "ts-seat-service": [
+          [
+            638,
+            651
+          ]
+        ],
+        "ts-security-service": [
+          [
+            224,
+            237
+          ]
+        ],
+        "ts-station-service": [
+          [
+            0,
+            9
+          ]
+        ],
+        "ts-ticketinfo-service": [
+          [
+            307,
+            319
+          ]
+        ],
+        "ts-train-service": [
+          [
+            585,
+            594
+          ]
+        ],
+        "ts-travel-plan-service": [
+          [
+            677,
+            695
+          ]
+        ],
+        "ts-travel-service": [
+          [
+            403,
+            427
+          ]
+        ],
+        "ts-travel2-service": [
+          [
+            652,
+            676
+          ]
+        ],
+        "ts-user-service": [
+          [
+            294,
+            306
+          ]
+        ],
+        "ts-verification-code-service": [
+          [
+            505,
+            512
+          ]
+        ]
+      }
+    },
+    "Go": {
+      "services": {
+        "ts-news-service": {
+          "file_count": 2,
+          "total_loc": 57
+        }
+      },
+      "total_files": 2,
+      "total_loc": 57,
+      "unresolved_files": 0,
+      "unresolved_loc": 0,
+      "file_ranges": {
+        "ts-news-service": [
+          [
+            0,
+            1
+          ]
+        ]
+      }
+    },
+    "JavaScript": {
+      "services": {
+        "ts-ticket-office-service": {
+          "file_count": 607,
+          "total_loc": 175696
+        },
+        "ts-ui-dashboard": {
+          "file_count": 69,
+          "total_loc": 58818
+        }
+      },
+      "total_files": 676,
+      "total_loc": 234514,
+      "unresolved_files": 0,
+      "unresolved_loc": 0,
+      "file_ranges": {
+        "ts-ticket-office-service": [
+          [
+            69,
+            675
+          ]
+        ],
+        "ts-ui-dashboard": [
+          [
+            0,
+            68
+          ]
+        ]
+      }
+    }
+  }
+}

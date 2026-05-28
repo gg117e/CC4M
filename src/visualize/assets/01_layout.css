@@ -1,0 +1,72 @@
+/* filepath: assets/01_layout.css
+   NOTE: body styling is handled by 02_ide_theme.css (sidebar layout).
+   Only card/container styles remain here. */
+
+.container {
+    /* max-width設定はcustom.cssで管理 */
+    margin: 0 auto;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(52, 73, 94, 0.1);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.graph-summary-card {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+}
+
+.graph-container {
+    flex: 3;
+    min-width: 0; /* flexアイテムの縮小を許可 */
+}
+
+.summary-container {
+    flex: 1;
+}
+
+/* 研究ツール用のアニメーション */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* グラデーションアニメーション */
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* 研究データの強調表示 */
+.research-highlight {
+    background: linear-gradient(-45deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1), rgba(52, 152, 219, 0.1), rgba(155, 89, 182, 0.1));
+    background-size: 400% 400%;
+    animation: gradientShift 8s ease infinite;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 8px 0;
+}

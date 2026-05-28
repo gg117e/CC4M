@@ -1,0 +1,210 @@
+/* =====================================================================
+   Statistics Dashboard (Design A)
+   KPI strip + chart grid (donut / stacked bar / top services).
+   ===================================================================== */
+
+.statistics-dashboard {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #f8fafc;
+  padding: 24px 28px;
+  overflow-y: auto;
+  gap: 28px;
+}
+
+.statistics-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+}
+
+.statistics-header-block {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.statistics-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #0f172a;
+  letter-spacing: -0.01em;
+}
+
+.statistics-subtitle {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+/* ---- Empty state ---------------------------------------------------- */
+
+.statistics-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+  background: #ffffff;
+  border: 1px dashed #cbd5e1;
+  border-radius: 12px;
+  color: #64748b;
+  text-align: center;
+}
+
+.statistics-empty-icon {
+  font-size: 2.2rem;
+  margin-bottom: 12px;
+  color: #94a3b8;
+}
+
+.statistics-empty-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 4px;
+}
+
+.statistics-empty-copy {
+  font-size: 0.85rem;
+}
+
+/* ---- Content -------------------------------------------------------- */
+
+.statistics-content {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+/* KPI ストリップとチャート行の間隔を確実に確保. flex gap が効かない環境への
+   フォールバックも兼ねる. */
+.statistics-content > .statistics-kpi-strip {
+  margin-bottom: 16px;
+}
+
+.statistics-content > .statistics-chart-grid {
+  margin-top: 8px;
+}
+
+/* ---- KPI strip ------------------------------------------------------ */
+
+.statistics-kpi-strip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+@media (max-width: 1080px) {
+  .statistics-kpi-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .statistics-kpi-strip {
+    grid-template-columns: 1fr;
+  }
+}
+
+.statistics-kpi-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+
+.statistics-kpi-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.statistics-kpi-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.statistics-kpi-help {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #e2e8f0;
+  color: #475569;
+  font-size: 0.62rem;
+  font-weight: 700;
+  cursor: help;
+  user-select: none;
+}
+
+.statistics-kpi-value {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.05;
+  font-variant-numeric: tabular-nums;
+}
+
+.statistics-kpi-sub {
+  font-size: 0.72rem;
+  color: #64748b;
+  min-height: 1em;
+}
+
+/* ---- Chart grid ----------------------------------------------------- */
+
+.statistics-chart-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 1080px) {
+  .statistics-chart-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.statistics-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 16px 18px 12px;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.statistics-card-wide {
+  grid-column: 1 / -1;
+}
+
+.statistics-card-head {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.statistics-card-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.statistics-card-subtitle {
+  font-size: 0.75rem;
+  color: #64748b;
+}

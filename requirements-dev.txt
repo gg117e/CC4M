@@ -1,0 +1,7 @@
+# Development / artifact-review dependencies.
+# Installs the visualization runtime deps plus test and lint tooling so that
+# `make test` and `make lint` are reproducible from a clean checkout.
+-r requirements-web.txt
+
+pytest==9.0.3
+ruff==0.14.9

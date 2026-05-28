@@ -1,0 +1,20 @@
+{"id":"t01","file_path":"services/auth/tests/test_login.py","language":"Python","file_text":"def test_login_success():\n    assert True\n","label":"test","rationale":"testsディレクトリとdef test_の両方が一致"}
+{"id":"t02","file_path":"src/main/java/com/acme/LoginService.java","language":"Java","file_text":"import org.junit.Test;\npublic class LoginService {\n  @Test\n  public void login_ok() {}\n}\n","label":"test","rationale":"@Testでテストコードを示す"}
+{"id":"t03","file_path":"web/__tests__/user.spec.ts","language":"TypeScript","file_text":"describe('user', () => { it('ok', () => {}) })\n","label":"test","rationale":"__tests__と.spec.とdescribe, itが一致"}
+{"id":"t04","file_path":"pkg/foo/user_test.go","language":"Go","file_text":"func TestUser(t *testing.T) {}\n","label":"test","rationale":"_test.goとfunc Test...が一致"}
+{"id":"t05","file_path":"src/domain/entities/UserEntity.java","language":"Java","file_text":"import jakarta.persistence.Entity;\n@Entity\npublic class UserEntity {}\n","label":"data","rationale":"entitiesパスと@Entityが一致"}
+{"id":"t06","file_path":"db/migrations/001_create_user.sql","language":"SQL","file_text":"CREATE TABLE users(id bigint primary key);\n","label":"data","rationale":"migrationsパスと.sql拡張子とCREATE TABLEが一致"}
+{"id":"t07","file_path":"proto/user.proto","language":"Proto","file_text":"message User { string id = 1; }\n","label":"data","rationale":"protoパスと.proto拡張子とmessageが一致"}
+{"id":"t08","file_path":"app/models/order.py","language":"Python","file_text":"from pydantic import BaseModel\nclass Order(BaseModel):\n  id: int\n","label":"data","rationale":"modelsパスとBaseModelが一致"}
+{"id":"t09","file_path":".github/workflows/ci.yml","language":"YAML","file_text":"name: ci\non: [push]\n","label":"config","rationale":".githubディレクトリと.yml拡張子が一致"}
+{"id":"t10","file_path":"deploy/k8s/deployment.yaml","language":"YAML","file_text":"apiVersion: apps/v1\nkind: Deployment\n","label":"config","rationale":"apiVersionとkindが一致"}
+{"id":"t11","file_path":"pyproject.toml","language":"Python","file_text":"[project]\nname = 'demo'\nversion = '0.1.0'\n","label":"config","rationale":"設定ファイル名とversionキーが一致"}
+{"id":"t12","file_path":"infra/docker-compose.yml","language":"YAML","file_text":"services:\n  api:\n    image: demo\n","label":"config","rationale":"servicesキーと.yml拡張子が一致"}
+{"id":"t13","file_path":"src/service/user_service.py","language":"Python","file_text":"def create_user(name: str) -> dict:\n    return {'name': name}\n","label":"logic","rationale":"言語と拡張子一致でlogic寄り"}
+{"id":"t14","file_path":"src/main/kotlin/com/acme/UserService.kt","language":"Kotlin","file_text":"class UserService { fun create() = 1 }\n","label":"logic","rationale":"言語と拡張子一致でlogic寄り"}
+{"id":"t15","file_path":"frontend/src/components/user.tsx","language":"TypeScript","file_text":"export const User = () => <div/>\n","label":"logic","rationale":"言語と拡張子一致でlogic寄り"}
+{"id":"t16","file_path":"cmd/server/main.go","language":"Go","file_text":"func main() {}\n","label":"logic","rationale":"一般実装ファイルで特定シグナルなし"}
+{"id":"t17","file_path":"src/config/app.py","language":"Python","file_text":"def load_settings():\n    return {'k': 'v'}\n","label":"config","rationale":"configディレクトリ優先"}
+{"id":"t18","file_path":"src/testdata/schema.py","language":"Python","file_text":"schema = {'id': 'int'}\n","label":"logic","rationale":"schema単語のみは曖昧なためdata決定シグナルにしない"}
+{"id":"t19","file_path":"src/specs/payment.js","language":"JavaScript","file_text":"it('pays', () => {})\n","label":"test","rationale":"specsパスとit()が一致"}
+{"id":"t20","file_path":"build.gradle","language":"Java","file_text":"plugins { id 'java' }\n","label":"config","rationale":"設定ファイル名一致"}

@@ -1,0 +1,209 @@
+/* ==========================================================================
+   List View — シングルカラム遷移方式
+   ========================================================================== */
+
+/* --- 詳細セクション (Level 3 / 詳細レベル) --- */
+.list-detail-section {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+}
+
+/* --- サマリバー --- */
+.list-summary-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #eef1f5 100%);
+    border-bottom: 1px solid #dee2e6;
+    flex-shrink: 0;
+}
+
+.list-summary-inline {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-wrap: wrap;
+    min-width: 0;
+}
+
+.list-summary-badge {
+    font-size: 12px;
+    white-space: nowrap;
+    padding: 2px 0;
+}
+
+.list-summary-sep {
+    color: #ccc;
+    margin: 0 4px;
+    font-size: 11px;
+    user-select: none;
+}
+
+.list-summary-toggle-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    background: #fff;
+    color: #6c757d;
+    font-size: 12px;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background-color 0.15s, color 0.15s;
+}
+
+.list-summary-toggle-btn:hover {
+    background-color: #e9ecef;
+    color: #333;
+}
+
+.list-services-details {
+    margin-top: 3px;
+}
+
+.list-services-details summary {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    padding: 2px 7px;
+    border: 1px solid #bfdbfe;
+    border-radius: 4px;
+    background: #eff6ff;
+    color: #1d4ed8;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.list-services-details summary:hover {
+    background: #dbeafe;
+}
+
+.list-services-details-body {
+    margin-top: 5px;
+    color: #334155;
+    line-height: 1.35;
+}
+
+/* ==========================================================================
+   フラグメント比較セクション
+   ========================================================================== */
+
+#list-frag-compare-section {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+}
+
+/* --- 横並びスプリット: フラグメント一覧(左) + コード比較(右) --- */
+.list-compare-split {
+    display: flex;
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+}
+
+/* フラグメントペイン (左) */
+.list-compare-frag-pane {
+    flex: 0 0 320px;
+    max-width: 420px;
+    min-width: 0;
+    overflow-y: auto;
+    border-right: 1px solid #dee2e6;
+    display: flex;
+    flex-direction: column;
+    background-color: #fafbfc;
+}
+
+/* コード比較エリア (右) */
+.list-compare-code-area {
+    flex: 1;
+    min-width: 0;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 比較セクション内の split-container は散布図と同じスタイル再利用 */
+#list-frag-compare-section .split-container {
+    height: 100%;
+}
+
+#list-frag-compare-section .split-pane {
+    overflow: auto;
+}
+
+/* --- レスポンシブ: < 1024px で上下スタック --- */
+@media (max-width: 1024px) {
+    .list-compare-split {
+        flex-direction: column;
+    }
+
+    .list-compare-frag-pane {
+        flex: 0 0 auto;
+        max-width: none;
+        max-height: 35vh;
+        border-right: none;
+        border-bottom: 1px solid #dee2e6;
+    }
+
+    .list-compare-code-area {
+        flex: 1;
+        min-height: 200px;
+    }
+}
+
+/* --- レスポンシブ: < 768px テーブル横スクロール --- */
+@media (max-width: 768px) {
+    #list-main-table {
+        min-width: 600px;
+    }
+
+    .list-summary-inline {
+        gap: 2px;
+    }
+
+    .list-summary-badge {
+        font-size: 11px;
+    }
+
+    .list-compare-frag-pane {
+        flex: 0 0 auto;
+        max-width: none;
+    }
+}
+
+/* --- 遷移アニメーション (fade) --- */
+#list-table-section,
+#list-detail-section,
+#list-frag-compare-section {
+    transition: opacity 0.2s ease-in-out;
+}
+
+/* ── Column toggle dropdown (toolbar) ───────────────────────────────── */
+.list-columns-toggle .Select-multi-value-wrapper {
+    flex-wrap: wrap;
+}
+
+.list-columns-toggle .Select--multi .Select-value {
+    background: #eef2ff;
+    border: 1px solid #c7d2fe;
+    color: #3730a3;
+    font-weight: 600;
+    margin: 2px 2px;
+}
+
+.list-columns-toggle .Select-value-icon {
+    border-right: 1px solid #c7d2fe;
+    color: #4338ca;
+}

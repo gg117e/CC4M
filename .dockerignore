@@ -1,0 +1,19 @@
+.git
+.venv
+venv
+__pycache__
+**/__pycache__/
+*.pyc
+.pytest_cache
+.ruff_cache
+.DS_Store
+
+# Compose mounts these directories at runtime.
+dest
+dataset
+
+# Local-only material.
+scratch
+sketch
+ICSME2026
+*.pdf

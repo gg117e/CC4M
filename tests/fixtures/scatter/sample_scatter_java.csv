@@ -1,0 +1,7 @@
+clone_id,file_id_x,file_id_y,start_line_x,end_line_x,start_line_y,end_line_y,token_count,relation,clone_type,file_type_x,file_type_y,service_x,service_y,file_path_x,file_path_y,comodified
+1001,11,61,10,20,100,110,30,intra,ccfsw,logic,logic,svc-a,svc-a,/repo/svc-a/src/A1.java,/repo/svc-a/src/A2.java,true
+1002,12,62,30,40,120,130,25,inter,ccfsw,data,data,svc-a,svc-b,/repo/svc-a/src/B1.java,/repo/svc-b/src/B2.java,false
+1003,13,63,50,60,140,150,22,inter,tks,test,logic,svc-b,svc-c,/repo/svc-b/src/C1Test.java,/repo/svc-c/src/C2.java,true
+1004,14,64,70,80,160,170,18,intra,ccfsw,config,config,svc-c,svc-c,/repo/svc-c/src/D1.yml,/repo/svc-c/src/D2.yml,false
+1005,15,65,90,100,180,190,28,inter,tks,logic,logic,svc-a,svc-c,/repo/svc-a/src/E1.java,/repo/svc-c/src/E2.java,true
+1006,15,65,91,101,181,191,28,inter,ccfsw,data,config,svc-a,svc-c,/repo/svc-a/src/F1.sql,/repo/svc-c/src/F2.yaml,false

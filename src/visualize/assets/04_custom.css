@@ -1,0 +1,631 @@
+/* visualize/assets/custom.css */
+
+/* 全体コンテナの横幅を拡大 */
+.container {
+    max-width: 95vw;
+    width: 100%;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+/* カードの横幅も対応 */
+.card {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.details-container {
+    position: relative;
+    display: flex;
+    gap: 15px;
+}
+
+.details-container>.card {
+    flex: 1;
+    width: 50%;
+}
+
+.copy-button {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 10;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.copy-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.details-container:hover .copy-button {
+    opacity: 1;
+}
+
+/* クローン率列のスタイル */
+.clone-ratio {
+    font-weight: 700;
+    color: #e74c3c;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.service-table .clone-ratio {
+    text-align: center;
+}
+
+.service-table-header {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    color: white;
+    font-weight: 700;
+    text-align: center;
+    padding: 12px 16px;
+    border: none;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.service-stat {
+    text-align: right;
+    padding: 10px 16px;
+    border: 1px solid rgba(52, 152, 219, 0.1);
+    font-weight: 600;
+    color: #2c3e50;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.service-name {
+    padding: 10px 16px;
+    border: 1px solid rgba(52, 152, 219, 0.1);
+    font-weight: 600;
+    color: #2c3e50;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 249, 250, 0.9) 100%);
+}
+
+.service-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 16px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* クローンIDドロップダウンのスタイリング */
+#clone-id-filter .Select-option {
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    padding: 8px 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#clone-id-filter .Select-value-label {
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+}
+
+/* より具体的なセレクタでクローンIDドロップダウンをターゲット */
+div[id="clone-id-filter"] .Select-option {
+    font-family: 'Courier New', monospace !important;
+    font-size: 12px !important;
+    line-height: 1.3 !important;
+    padding: 6px 10px !important;
+    border-bottom: 1px solid #eee !important;
+}
+
+div[id="clone-id-filter"] .Select-option:hover {
+    background-color: #f8f9fa !important;
+}
+
+div[id="clone-id-filter"] .Select-control {
+    font-family: 'Courier New', monospace !important;
+    font-size: 12px !important;
+}
+
+div[id="clone-id-filter"] .Select-value {
+    font-family: 'Courier New', monospace !important;
+    font-size: 12px !important;
+}
+
+/* Dash 2.x 用のクローンIDドロップダウンスタイリング */
+#clone-id-filter .dash-dropdown .Select-menu-outer {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+#clone-id-filter .dash-dropdown .Select-option {
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    padding: 8px 12px;
+    line-height: 1.4;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+#clone-id-filter .dash-dropdown .Select-option:last-child {
+    border-bottom: none;
+}
+
+/* フィルタ状態表示のスタイリング */
+#filter-status {
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.1) 0%, rgba(155, 89, 182, 0.1) 100%);
+    border: 2px solid rgba(52, 152, 219, 0.3);
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-top: 8px;
+    font-family: 'SFMono-Regular', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+    font-weight: 600;
+    color: #2c3e50;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Help Section List Style */
+.help-section ul {
+    list-style: none;
+    padding-left: 15px;
+}
+
+.help-section li {
+    position: relative;
+    padding-left: 15px;
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.help-section li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 1.5em;
+    line-height: 1;
+    color: #333;
+}
+
+/* Dropdown and clone selector styling */
+.dropdown,
+.Select {
+    background-color: white !important;
+}
+
+.dropdown .Select-control,
+.Select-control {
+    background-color: white !important;
+    border: 1px solid #ced4da !important;
+}
+
+#clone-selector-container {
+    background-color: white;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+}
+
+/* Override any gray backgrounds for clone selector */
+#clone-dropdown {
+    background-color: white !important;
+}
+
+.clone-selector-panel {
+    background: #fff;
+    border: 1px solid #d8dee8;
+    border-radius: 8px;
+    padding: 14px 16px 16px;
+    margin-bottom: 10px;
+}
+
+.clone-selector-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.clone-selector-title-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+}
+
+.clone-selector-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 999px;
+    background: #e8f2ff;
+    color: #0b5cad;
+    font-size: 14px;
+    font-weight: 700;
+    flex: 0 0 auto;
+}
+
+.clone-selector-title-stack {
+    min-width: 0;
+}
+
+.clone-selector-title {
+    color: #1f2d3d;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.clone-selector-subtitle,
+.clone-selector-duplicate-note {
+    color: #667085;
+    font-size: 12px;
+    line-height: 1.35;
+}
+
+.clone-selector-duplicate-note {
+    margin-top: 2px;
+    white-space: nowrap;
+}
+
+.clone-selector-context {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: stretch;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.clone-selector-chip {
+    min-width: 0;
+    border: 1px solid #e3e8f0;
+    border-radius: 6px;
+    background: #f8fafc;
+    padding: 8px 10px;
+}
+
+.clone-selector-chip-label,
+.clone-selector-select-label {
+    color: #667085;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0;
+    text-transform: uppercase;
+}
+
+.clone-selector-file-name {
+    color: #1f2d3d;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-top: 3px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.clone-selector-service-name {
+    color: #475467;
+    font-size: 12px;
+    line-height: 1.25;
+    margin-top: 3px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.clone-selector-arrow {
+    align-self: center;
+    color: #98a2b3;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 0 2px;
+}
+
+.clone-selector-select-label {
+    margin-bottom: 6px;
+}
+
+.clone-selector-select-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 6px;
+}
+
+.clone-selector-sort-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 0 0 auto;
+}
+
+.clone-selector-sort-label {
+    color: #667085;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.clone-selector-sort {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    border: 1px solid #d8dee8;
+    border-radius: 6px;
+    background: #f8fafc;
+    padding: 2px;
+}
+
+.clone-selector-sort-option {
+    display: inline-flex;
+    align-items: center;
+    min-height: 24px;
+    border-radius: 4px;
+    color: #475467;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1;
+    padding: 5px 8px;
+}
+
+.clone-selector-sort-option:has(input:checked) {
+    background: #fff;
+    color: #0b5cad;
+    box-shadow: 0 1px 2px rgba(16, 24, 40, 0.12);
+}
+
+.clone-selector-sort-input {
+    height: 0;
+    margin: 0;
+    opacity: 0;
+    position: absolute;
+    width: 0;
+}
+
+.clone-selector-dropdown .Select-control {
+    min-height: 38px;
+}
+
+@media (max-width: 760px) {
+    .clone-selector-header {
+        flex-direction: column;
+    }
+
+    .clone-selector-context {
+        grid-template-columns: 1fr;
+    }
+
+    .clone-selector-select-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .clone-selector-arrow {
+        display: none;
+    }
+}
+
+/* コードとファイル全体のスタイル */
+.code-and-file-container {
+    margin: 0;
+    padding: 0;
+}
+
+.code-pane-content {
+    padding: 15px;
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+    font-size: 13px;
+    line-height: 1.5;
+    overflow-x: auto;
+    background-color: #fafbfc;
+    /* Subtle background for code */
+}
+
+/* Diff View Styles */
+.diff-line {
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+    font-size: 12px;
+    line-height: 1.5;
+    white-space: pre;
+    /* Preserve indentation */
+    display: flex;
+}
+
+.diff-line .line-num {
+    display: inline-block;
+    width: 30px;
+    min-width: 30px;
+    text-align: right;
+    margin-right: 12px;
+    color: #a0a0a0;
+    user-select: none;
+    border-right: 1px solid #eee;
+    padding-right: 8px;
+}
+
+.diff-line span:last-child {
+    flex: 1;
+    /* Text takes remaining space */
+}
+
+.diff-line.diff {
+    background-color: rgba(255, 235, 59, 0.15);
+    /* Yellow highlight for diffs */
+}
+
+.diff-line:hover {
+    background-color: #f1f8ff;
+}
+
+.full-file-content {
+    /* Fixed height at 70% of viewport as explicitly requested */
+    height: 70vh !important;
+    max-height: 70vh !important;
+    overflow-y: auto !important;
+    overflow-x: auto;
+    background-color: white;
+    border-top: 1px solid #e1e4e8;
+    padding: 0;
+    margin-top: 0;
+}
+
+/* Premium styling for the markdown code block */
+.full-code-markdown {
+    width: 100%;
+    /* Ensure markdown container respects parent width */
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.full-code-markdown pre {
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    background-color: white !important;
+    white-space: pre;
+    /* Keep code on one line, force scroll */
+    overflow-x: auto;
+    /* Enable horizontal scrolling specifically for pre */
+    max-width: 100%;
+    /* Prevent breaking out of container */
+}
+
+.full-code-markdown code {
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace !important;
+    font-size: 12px;
+}
+
+/* プロジェクト全体のクローン率表示 */
+.project-clone-ratio-section {
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.1) 0%, rgba(155, 89, 182, 0.1) 100%);
+    border: 3px solid transparent;
+    background-clip: padding-box;
+    border-radius: 12px;
+    padding: 24px;
+    margin: 24px 0;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.project-clone-ratio-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 12px;
+    z-index: -1;
+    margin: -3px;
+}
+
+.clone-ratio-title {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0 0 20px 0;
+    font-size: 1.75em;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.clone-ratio-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.clone-ratio-value {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: #dc3545;
+    background-color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 2px solid #dc3545;
+}
+
+.clone-ratio-description {
+    font-size: 1.2em;
+    color: #495057;
+    font-weight: 500;
+}
+
+.clone-ratio-error {
+    font-size: 1.2em;
+    color: #dc3545;
+    font-style: italic;
+}
+
+/* Split View Styles */
+.split-container {
+    display: flex;
+    width: 100%;
+    /* Remove fixed height to allow expansion if needed, or set min-height */
+    min-height: 500px;
+    border: 1px solid #e1e4e8;
+    background-color: #ffffff;
+    overflow: hidden;
+    position: relative;
+    /* Context for absolute positioning of children if needed */
+}
+
+.split-pane {
+    overflow: hidden;
+    /* Scroll handled by internal content */
+    display: flex;
+    flex-direction: column;
+    /* Default flex - will be overridden by JS for left pane */
+    flex: 1;
+    min-width: 150px;
+    /* Prevent collapse */
+}
+
+.split-gutter {
+    width: 10px;
+    background-color: #f1f3f5;
+    border-left: 1px solid #e1e4e8;
+    border-right: 1px solid #e1e4e8;
+    cursor: col-resize;
+    flex: 0 0 10px;
+    transition: background-color 0.2s;
+    user-select: none;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Optional: grip decoration */
+.split-gutter::after {
+    content: "⋮";
+    color: #adb5bd;
+    font-size: 14px;
+    line-height: 1;
+}
+
+.split-gutter:hover,
+.split-gutter:active {
+    background-color: #3b82f6;
+    /* Blue hover */
+}
+
+.split-gutter:hover::after,
+.split-gutter:active::after {
+    color: white;
+}

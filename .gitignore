@@ -1,0 +1,50 @@
+# Virtual environments
+.venv/
+venv/
+
+# Python caches
+__pycache__/
+*.pyc
+.pyre/
+
+# Test / lint caches
+.pytest_cache/
+.ruff_cache/
+
+# OS
+.DS_Store
+
+# Generated artifacts
+/dest/*
+!/dest/analysis_params/
+/dest/analysis_params/*
+!/dest/analysis_params/FudanSELab.train-ticket.json
+!/dest/clone_metrics/
+/dest/clone_metrics/*
+!/dest/clone_metrics/FudanSELab.train-ticket_*.json
+!/dest/enriched_fragments/
+/dest/enriched_fragments/*
+!/dest/enriched_fragments/FudanSELab.train-ticket/
+!/dest/scatter/
+/dest/scatter/*
+!/dest/scatter/FudanSELab.train-ticket/
+/dest/scatter/FudanSELab.train-ticket/*
+!/dest/scatter/FudanSELab.train-ticket/csv/
+/dest/scatter/FudanSELab.train-ticket/csv/*
+# 5/27 検出 全言語 (Go / Java / JavaScript / Python)
+!/dest/scatter/FudanSELab.train-ticket/csv/train-ticket_normal_50_filtered_cloneset_merge_20260527_*.csv
+# JavaScript scatter は同梱ライブラリ由来で 457MB と巨大なため除外 (Stats View は enriched/metrics で動作)
+/dest/scatter/FudanSELab.train-ticket/csv/train-ticket_normal_50_filtered_cloneset_merge_20260527_JavaScript.csv
+!/dest/services_json/
+/dest/services_json/*
+!/dest/services_json/FudanSELab.train-ticket.json
+# Source checkouts are cloned on demand and are not versioned.
+dest/projects/
+/scratch/
+
+# External dataset (download separately)
+/dataset/*
+!/dataset/.gitkeep
+
+# Local tool settings
+/.claude/

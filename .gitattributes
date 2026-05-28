@@ -1,0 +1,12 @@
+# Keep text files normalized across reviewer platforms.
+* text=auto eol=lf
+
+# Keep executable scripts and container metadata portable.
+*.sh text eol=lf
+Makefile text eol=lf
+Dockerfile text eol=lf
+Dockerfile.* text eol=lf
+*.ps1 text eol=crlf
+
+# Treat bundled demo artifacts as binary so line endings are never rewritten.
+dest/** -text

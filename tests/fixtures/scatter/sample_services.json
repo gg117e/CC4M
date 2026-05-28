@@ -1,0 +1,12 @@
+{
+  "URL": "https://github.com/example/sample-scatter-project",
+  "language_stats": {
+    "Java": {
+      "file_ranges": {
+        "svc-a": [[1, 50]],
+        "svc-b": [[51, 100]],
+        "svc-c": [[101, 150]]
+      }
+    }
+  }
+}

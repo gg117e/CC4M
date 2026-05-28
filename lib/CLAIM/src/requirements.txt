@@ -1,0 +1,9 @@
+python-dotenv==1.0.1
+dockerfile==3.3.1
+parameter-expansion-patched==0.3.1
+pyyaml==5.4.1
+gitpython==3.1.30
+PyDriller==2.6
+python-dateutil==2.8.2
+scalene==1.5.22.2
+matplotlib

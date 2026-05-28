@@ -1,0 +1,19 @@
+# requirements-web.txt
+#
+# Keep these installs wheel-only on Windows to avoid source builds that require
+# Visual Studio / Meson.  Use >= lower bounds so pip can pick a release that
+# has a binary wheel for the active Python version (3.12+).
+--only-binary=:all:
+
+dash>=2.18.2
+dash-bootstrap-components>=1.6.0
+fastapi>=0.115.0
+uvicorn[standard]>=0.32.0
+pandas>=2.2.3
+numpy>=2.2.4
+plotly>=5.0.0
+GitPython==3.1.44
+PyDriller==2.7
+python-dateutil==2.9.0.post0
+matplotlib>=3.10.1
+PyYAML>=6.0.2

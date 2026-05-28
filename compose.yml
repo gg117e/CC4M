@@ -1,0 +1,24 @@
+services:
+  web-ui:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./dest:/app/dest
+      - ./dataset:/app/dataset:ro
+      - ./src:/app/src
+    command: ["web-ui", "--host", "0.0.0.0", "--port", "8000"]
+    restart: unless-stopped
+
+  analysis:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./dest:/app/dest
+      - ./dataset:/app/dataset:ro
+      - ./src:/app/src
+    profiles:
+      - analysis
