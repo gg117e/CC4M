@@ -79,7 +79,7 @@ make lint
 | [docs/usage.md](docs/usage.md)                                           | Entry points, tests, batch CLI, settings          |
 | [docs/definitions.md](docs/definitions.md)                               | Terminology                                       |
 | [docs/metrics.md](docs/metrics.md)                                       | Clone metrics verified against the code           |
-| [docs/declaration_filtering.md](docs/declaration_line_filtering.md) | Declaration-line filtering before clone detection |
+| [docs/declaration_filtering.md](docs/declaration_filtering.md) | Declaration-line filtering before clone detection |
 | [docs/file_classification.md](docs/file_classification.md)               | File-path / service / file-type handling          |
 | [docs/dataset.md](docs/dataset.md)                                       | Dataset, target selection, demo data              |
 
