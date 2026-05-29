@@ -1,0 +1,177 @@
+{
+  "services": {
+    "donor-profile-service/": [
+      "donor-profile-service"
+    ],
+    "reportservice/": [
+      "report-service"
+    ],
+    "eureka-server/": [
+      "eureka-server"
+    ],
+    "search-service/": [
+      "search-service"
+    ],
+    "config-server/": [
+      "config-service"
+    ],
+    "recepient-profile-service/": [
+      "recepient-profile-service"
+    ],
+    "chat-service/": [
+      "chat-service"
+    ],
+    "lifeline-angular-frontend/": [
+      "lifeline-frontend"
+    ],
+    "zuul-api/": [
+      "zuul-api"
+    ],
+    "login-service/": [
+      "login-service"
+    ]
+  },
+  "URL": "https://github.com/stackroute/ibm-wave7-lifeline",
+  "language_stats": {
+    "Java": {
+      "services": {
+        "chat-service": {
+          "file_count": 6,
+          "total_loc": 149
+        },
+        "config-service": {
+          "file_count": 2,
+          "total_loc": 33
+        },
+        "donor-profile-service": {
+          "file_count": 22,
+          "total_loc": 1122
+        },
+        "eureka-server": {
+          "file_count": 2,
+          "total_loc": 32
+        },
+        "login-service": {
+          "file_count": 19,
+          "total_loc": 1037
+        },
+        "recepient-profile-service": {
+          "file_count": 17,
+          "total_loc": 872
+        },
+        "report-service": {
+          "file_count": 14,
+          "total_loc": 581
+        },
+        "search-service": {
+          "file_count": 24,
+          "total_loc": 846
+        },
+        "zuul-api": {
+          "file_count": 3,
+          "total_loc": 67
+        }
+      },
+      "total_files": 109,
+      "total_loc": 4739,
+      "unresolved_files": 0,
+      "unresolved_loc": 0,
+      "file_ranges": {
+        "chat-service": [
+          [
+            0,
+            5
+          ]
+        ],
+        "config-service": [
+          [
+            6,
+            7
+          ]
+        ],
+        "donor-profile-service": [
+          [
+            8,
+            29
+          ]
+        ],
+        "eureka-server": [
+          [
+            30,
+            31
+          ]
+        ],
+        "login-service": [
+          [
+            32,
+            50
+          ]
+        ],
+        "recepient-profile-service": [
+          [
+            51,
+            67
+          ]
+        ],
+        "report-service": [
+          [
+            68,
+            81
+          ]
+        ],
+        "search-service": [
+          [
+            82,
+            105
+          ]
+        ],
+        "zuul-api": [
+          [
+            106,
+            108
+          ]
+        ]
+      }
+    },
+    "JavaScript": {
+      "services": {
+        "lifeline-frontend": {
+          "file_count": 2,
+          "total_loc": 63
+        }
+      },
+      "total_files": 2,
+      "total_loc": 63,
+      "unresolved_files": 0,
+      "unresolved_loc": 0,
+      "file_ranges": {
+        "lifeline-frontend": [
+          [
+            0,
+            1
+          ]
+        ]
+      }
+    },
+    "TypeScript": {
+      "services": {
+        "lifeline-frontend": {
+          "file_count": 96,
+          "total_loc": 4112
+        }
+      },
+      "total_files": 96,
+      "total_loc": 4112,
+      "unresolved_files": 0,
+      "unresolved_loc": 0,
+      "file_ranges": {
+        "lifeline-frontend": [
+          [
+            0,
+            95
+          ]
+        ]
+      }
+    }
+  }
+}
