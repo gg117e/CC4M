@@ -71,7 +71,7 @@ Per-project commit caps (`MAX_ANALYZED_COMMITS` in `config.py`) appear in the **
 | [Microservice-API-Patterns/LakesideMutual](https://github.com/Microservice-API-Patterns/LakesideMutual) | Java, JavaScript | Merge, no cap | |
 | [stackroute/ibm-wave7-lifeline](https://github.com/stackroute/ibm-wave7-lifeline) | Java | Merge, no cap | |
 | [tgrall/redis-microservices-demo](https://github.com/tgrall/redis-microservices-demo) | Java, JavaScript | Merge, no cap | |
-| [FightPandemics/FightPandemics](https://github.com/FightPandemics/FightPandemics) | JavaScript (Node.js / React) | Merge, last 20 | ~600 merge commits, capped to the 20 most recent |
+| [FightPandemics/FightPandemics](https://github.com/FightPandemics/FightPandemics) | JavaScript (Node.js / React) | Merge, last 10 | ~600 merge commits, capped to the 20 most recent |
 
 ### Why These Projects
 
