@@ -1,0 +1,144 @@
+{
+  "services": {
+    "spring-boot-admin/": [
+      "spring-boot-admin"
+    ],
+    "customer-core/": [
+      "customer-core"
+    ],
+    "risk-management-server/": [
+      "risk-management-server"
+    ],
+    "policy-management-backend/": [
+      "policy-management-backend"
+    ],
+    "customer-management-frontend/": [
+      "customer-management-frontend"
+    ],
+    "customer-self-service-frontend/": [
+      "customer-self-service-frontend"
+    ],
+    "policy-management-frontend/": [
+      "policy-management-frontend"
+    ],
+    "customer-management-backend/": [
+      "customer-management-backend"
+    ],
+    "customer-self-service-backend/": [
+      "customer-self-service-backend"
+    ]
+  },
+  "URL": "https://github.com/Microservice-API-Patterns/LakesideMutual",
+  "language_stats": {
+    "Java": {
+      "services": {
+        "customer-core": {
+          "file_count": 37,
+          "total_loc": 2693
+        },
+        "customer-management-backend": {
+          "file_count": 35,
+          "total_loc": 1581
+        },
+        "customer-self-service-backend": {
+          "file_count": 74,
+          "total_loc": 4499
+        },
+        "policy-management-backend": {
+          "file_count": 80,
+          "total_loc": 5369
+        },
+        "spring-boot-admin": {
+          "file_count": 1,
+          "total_loc": 20
+        }
+      },
+      "total_files": 228,
+      "total_loc": 14177,
+      "unresolved_files": 1,
+      "unresolved_loc": 15,
+      "file_ranges": {
+        "customer-core": [
+          [
+            0,
+            36
+          ]
+        ],
+        "customer-management-backend": [
+          [
+            37,
+            71
+          ]
+        ],
+        "customer-self-service-backend": [
+          [
+            72,
+            145
+          ]
+        ],
+        "policy-management-backend": [
+          [
+            147,
+            226
+          ]
+        ],
+        "spring-boot-admin": [
+          [
+            227,
+            227
+          ]
+        ]
+      }
+    },
+    "JavaScript": {
+      "services": {
+        "customer-management-frontend": {
+          "file_count": 40,
+          "total_loc": 10651
+        },
+        "customer-self-service-frontend": {
+          "file_count": 46,
+          "total_loc": 11575
+        },
+        "policy-management-frontend": {
+          "file_count": 6,
+          "total_loc": 358
+        },
+        "risk-management-server": {
+          "file_count": 3,
+          "total_loc": 486
+        }
+      },
+      "total_files": 96,
+      "total_loc": 23132,
+      "unresolved_files": 1,
+      "unresolved_loc": 62,
+      "file_ranges": {
+        "customer-management-frontend": [
+          [
+            0,
+            39
+          ]
+        ],
+        "customer-self-service-frontend": [
+          [
+            40,
+            85
+          ]
+        ],
+        "policy-management-frontend": [
+          [
+            86,
+            91
+          ]
+        ],
+        "risk-management-server": [
+          [
+            93,
+            95
+          ]
+        ]
+      }
+    }
+  }
+}
