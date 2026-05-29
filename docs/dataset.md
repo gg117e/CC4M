@@ -43,9 +43,56 @@ Additional limits can be configured in `config.py`:
 Analysis results for selected commits are stored in `dest/analyzed_commits/`.
 
 
+## Analyzed Projects
+
+CC4M is applied to a set of open-source, Docker-based microservice projects chosen to cover a range of sizes, languages, and design styles. For each project, the detection results (but **not** the source code) are versioned under `dest/`, keyed by `owner.repo` (for example, `FudanSELab.train-ticket`). Source checkouts are cloned on demand and are not committed.
+
+`FudanSELab.train-ticket` is fully bundled today; the remaining projects are analyzed incrementally, and their result files are added under `dest/` as detection completes.
+
+### Common Detection Settings
+
+Unless the table notes otherwise, every project is analyzed with the same parameters:
+
+| Setting | Value |
+| --- | --- |
+| Minimum Matching Tokens | 50 |
+| Filter declaration lines | ON |
+| Commit Selection Method | Merge Commit |
+
+Per-project commit caps (`MAX_ANALYZED_COMMITS` in `config.py`) appear in the **Commits** column below.
+
+### Project Overview
+
+| Project | Languages | Commits | Notes |
+| --- | --- | --- | --- |
+| [FudanSELab/train-ticket](https://github.com/FudanSELab/train-ticket) | Java, JavaScript | Merge, no cap | Java results only — see note below |
+| [microservices-patterns/ftgo-application](https://github.com/microservices-patterns/ftgo-application) | Java | Merge, no cap | |
+| [lightstep/opentelemetry-examples](https://github.com/lightstep/opentelemetry-examples) | Python, Java, Go, JavaScript | Merge, no cap | |
+| [Microservice-API-Patterns/LakesideMutual](https://github.com/Microservice-API-Patterns/LakesideMutual) | Java, JavaScript | Merge, no cap | |
+| [stackroute/ibm-wave7-lifeline](https://github.com/stackroute/ibm-wave7-lifeline) | Java | Merge, no cap | |
+| [tgrall/redis-microservices-demo](https://github.com/tgrall/redis-microservices-demo) | Java, JavaScript | Merge, no cap | |
+| [FightPandemics/FightPandemics](https://github.com/FightPandemics/FightPandemics) | JavaScript (Node.js / React) | Merge, last 20 | ~600 merge commits, capped to the 20 most recent |
+
+### Why These Projects
+
+**FudanSELab/train-ticket** — The best-known and largest microservice benchmark, comprising tens of services. Ideal for evaluating how large-scale clones arise in complex systems. Only the Java results are published: the JavaScript scatter dataset is ~457 MB (bundled libraries inflate the clone count) and exceeds GitHub's per-file limit, so it is excluded from version control.
+
+**microservices-patterns/ftgo-application** — The official reference implementation for the book *Microservices Patterns*. Built around standard, exemplary design patterns, it is well suited to analyzing the boilerplate and template code (clones) that accompany domain-driven design.
+
+**lightstep/opentelemetry-examples** — A collection of OpenTelemetry implementation examples spanning multiple languages, with many API-call and instrumentation patterns. Similar configuration and initialization code tends to be cloned across services.
+
+**Microservice-API-Patterns/LakesideMutual** — The official reference implementation for *Microservice API Patterns* (a simulated insurance-company system). A Spring Boot backend with a separate frontend; REST API integration and pattern implementation produce boilerplate clones that are easy to detect.
+
+**stackroute/ibm-wave7-lifeline** — A textbook Spring Cloud microservice layout (config-server, search-service, zuul-api, and various profile-services). Ideal for clone analysis of per-service boilerplate such as configuration and error handling.
+
+**tgrall/redis-microservices-demo** — A Redis-backed, polyglot system mixing Node.js services and a Java system. Responsibilities are split into fine-grained services within the repository (for example, DB read/write services), making it convenient for small, focused validation.
+
+**FightPandemics/FightPandemics** — A large open-source social platform with a clearly separated backend and client. Good for observing how code clones arise in JavaScript/TypeScript projects (UI components, API routers, and the like). Because it has roughly 600 merge commits, analysis is capped to the 20 most recent.
+
+
 ## Demo Data Shipped with This Artifact
 
-For review, this branch bundles a small precomputed `dest/` for `FudanSELab.train-ticket`, covering every programming language detected in the repository:
+For review, this branch bundles a small precomputed `dest/` for `FudanSELab.train-ticket` (the first entry in [Analyzed Projects](#analyzed-projects)), covering every programming language detected in the repository:
 
 * `dest/scatter/`
 * `dest/services_json/`

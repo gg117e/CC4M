@@ -15,31 +15,36 @@ __pycache__/
 .DS_Store
 
 # Generated artifacts
+# ----------------------------------------------------------------------------
+# Detection results for every analyzed project are versioned, EXCEPT:
+#   - source checkouts under dest/projects/ (cloned on demand)
+#   - individual files too large for GitHub (100 MB hard limit), listed below
+# Adding a new project usually needs no edits here: just commit its result
+# files. Only oversized files require an explicit exclusion line.
+# ----------------------------------------------------------------------------
 /dest/*
-!/dest/analysis_params/
-/dest/analysis_params/*
-!/dest/analysis_params/FudanSELab.train-ticket.json
-!/dest/clone_metrics/
-/dest/clone_metrics/*
-!/dest/clone_metrics/FudanSELab.train-ticket_*.json
-!/dest/enriched_fragments/
-/dest/enriched_fragments/*
-!/dest/enriched_fragments/FudanSELab.train-ticket/
-!/dest/scatter/
-/dest/scatter/*
-!/dest/scatter/FudanSELab.train-ticket/
-/dest/scatter/FudanSELab.train-ticket/*
-!/dest/scatter/FudanSELab.train-ticket/csv/
-/dest/scatter/FudanSELab.train-ticket/csv/*
-# 5/27 検出 全言語 (Go / Java / JavaScript / Python)
-!/dest/scatter/FudanSELab.train-ticket/csv/train-ticket_normal_50_filtered_cloneset_merge_20260527_*.csv
-# JavaScript scatter は同梱ライブラリ由来で 457MB と巨大なため除外 (Stats View は enriched/metrics で動作)
-/dest/scatter/FudanSELab.train-ticket/csv/train-ticket_normal_50_filtered_cloneset_merge_20260527_JavaScript.csv
-!/dest/services_json/
-/dest/services_json/*
-!/dest/services_json/FudanSELab.train-ticket.json
-# Source checkouts are cloned on demand and are not versioned.
+
+# Per-project source checkouts are cloned on demand and never versioned.
 dest/projects/
+
+# Lightweight detection results (JSON), all projects.
+!/dest/analysis_params/
+!/dest/clone_metrics/
+!/dest/services_json/
+
+# Enriched fragments and scatter datasets (CSV), all projects.
+!/dest/enriched_fragments/
+!/dest/scatter/
+
+# --- Oversized files excluded from version control (GitHub 100 MB limit) ----
+# Add one line per file that is too large to push. The Stats View still works
+# from enriched_fragments + clone_metrics, so excluding a scatter CSV only
+# drops that one language's scatter plot.
+#
+# FudanSELab.train-ticket: the JavaScript scatter is ~457 MB (bundled
+# libraries inflate the clone count), so it is excluded; Java is kept.
+/dest/scatter/FudanSELab.train-ticket/csv/*_JavaScript.csv
+
 /scratch/
 
 # External dataset (download separately)

@@ -1,0 +1,103 @@
+{
+  "service": [],
+  "clone_set": [
+    {
+      "clone_id": "1",
+      "service_count": 0,
+      "cross_service_fragment_count": 0,
+      "cross_service_fragment_ratio": 0.0,
+      "cross_service_line_count": 0,
+      "cross_service_scale": 0,
+      "cross_service_element_count": 0,
+      "comod_count": 0,
+      "comod_fragment_count": 0,
+      "comod_fragment_ratio": 0.0
+    },
+    {
+      "clone_id": "2",
+      "service_count": 0,
+      "cross_service_fragment_count": 0,
+      "cross_service_fragment_ratio": 0.0,
+      "cross_service_line_count": 0,
+      "cross_service_scale": 0,
+      "cross_service_element_count": 0,
+      "comod_count": 0,
+      "comod_fragment_count": 0,
+      "comod_fragment_ratio": 0.0
+    },
+    {
+      "clone_id": "3",
+      "service_count": 0,
+      "cross_service_fragment_count": 0,
+      "cross_service_fragment_ratio": 0.0,
+      "cross_service_line_count": 0,
+      "cross_service_scale": 0,
+      "cross_service_element_count": 0,
+      "comod_count": 0,
+      "comod_fragment_count": 0,
+      "comod_fragment_ratio": 0.0
+    },
+    {
+      "clone_id": "4",
+      "service_count": 0,
+      "cross_service_fragment_count": 0,
+      "cross_service_fragment_ratio": 0.0,
+      "cross_service_line_count": 0,
+      "cross_service_scale": 0,
+      "cross_service_element_count": 0,
+      "comod_count": 0,
+      "comod_fragment_count": 0,
+      "comod_fragment_ratio": 0.0
+    }
+  ],
+  "file": [
+    {
+      "file_path": "ftgo-api-gateway-graphql/src/ConsumerServiceProxy.js",
+      "service": "",
+      "sharing_service_count": 0,
+      "total_service_count": 0,
+      "cross_service_clone_set_count": 0,
+      "cross_service_clone_set_ratio": 0.0,
+      "sharing_service_ratio": 0.0,
+      "cross_service_line_count": 0,
+      "cross_service_comod_count": 0,
+      "comod_shared_service_count": 0
+    },
+    {
+      "file_path": "ftgo-api-gateway-graphql/src/RestaurantServiceProxy.js",
+      "service": "",
+      "sharing_service_count": 0,
+      "total_service_count": 0,
+      "cross_service_clone_set_count": 0,
+      "cross_service_clone_set_ratio": 0.0,
+      "sharing_service_ratio": 0.0,
+      "cross_service_line_count": 0,
+      "cross_service_comod_count": 0,
+      "comod_shared_service_count": 0
+    },
+    {
+      "file_path": "ftgo-api-gateway-graphql/tests/unit/client.test.js",
+      "service": "",
+      "sharing_service_count": 0,
+      "total_service_count": 0,
+      "cross_service_clone_set_count": 0,
+      "cross_service_clone_set_ratio": 0.0,
+      "sharing_service_ratio": 0.0,
+      "cross_service_line_count": 0,
+      "cross_service_comod_count": 0,
+      "comod_shared_service_count": 0
+    },
+    {
+      "file_path": "ftgo-api-gateway-graphql/tests/unit/schema.test.js",
+      "service": "",
+      "sharing_service_count": 0,
+      "total_service_count": 0,
+      "cross_service_clone_set_count": 0,
+      "cross_service_clone_set_ratio": 0.0,
+      "sharing_service_ratio": 0.0,
+      "cross_service_line_count": 0,
+      "cross_service_comod_count": 0,
+      "comod_shared_service_count": 0
+    }
+  ]
+}

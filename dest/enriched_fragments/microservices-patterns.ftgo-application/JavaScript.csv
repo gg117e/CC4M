@@ -1,0 +1,9 @@
+clone_id,fragment_index,file_path,file_id,service,start_line,end_line,line_count,file_type,modified_commits,modified_count
+1,0,ftgo-api-gateway-graphql/src/ConsumerServiceProxy.js,1,,47,58,12,logic,[],0
+1,1,ftgo-api-gateway-graphql/src/RestaurantServiceProxy.js,4,,25,36,12,logic,[],0
+2,0,ftgo-api-gateway-graphql/tests/unit/client.test.js,8,,13,24,12,test,[],0
+2,1,ftgo-api-gateway-graphql/tests/unit/schema.test.js,9,,107,119,13,test,[],0
+3,0,ftgo-api-gateway-graphql/tests/unit/client.test.js,8,,5,23,19,test,[],0
+3,1,ftgo-api-gateway-graphql/tests/unit/schema.test.js,9,,5,23,19,test,[],0
+4,0,ftgo-api-gateway-graphql/tests/unit/client.test.js,8,,13,31,19,test,[],0
+4,1,ftgo-api-gateway-graphql/tests/unit/schema.test.js,9,,79,97,19,test,[],0

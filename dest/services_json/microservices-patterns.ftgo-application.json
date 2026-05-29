@@ -1,0 +1,143 @@
+{
+  "services": {
+    "ftgo-delivery-service/": [
+      "ftgo-delivery-service"
+    ],
+    "ftgo-accounting-service/": [
+      "ftgo-accounting-service"
+    ],
+    "ftgo-consumer-service/": [
+      "ftgo-consumer-service"
+    ],
+    "ftgo-api-gateway/": [
+      "ftgo-api-gateway"
+    ],
+    "dynamodblocal-init/": [
+      "dynamodblocal-init"
+    ],
+    "ftgo-order-history-service/": [
+      "ftgo-order-history-service"
+    ],
+    "ftgo-order-service/": [
+      "ftgo-order-service"
+    ],
+    "mysql/": [
+      "mysql"
+    ],
+    "ftgo-kitchen-service/": [
+      "ftgo-kitchen-service"
+    ],
+    "ftgo-restaurant-service/": [
+      "ftgo-restaurant-service"
+    ]
+  },
+  "URL": "https://github.com/microservices-patterns/ftgo-application",
+  "language_stats": {
+    "Java": {
+      "services": {
+        "ftgo-accounting-service": {
+          "file_count": 23,
+          "total_loc": 677
+        },
+        "ftgo-api-gateway": {
+          "file_count": 20,
+          "total_loc": 606
+        },
+        "ftgo-consumer-service": {
+          "file_count": 18,
+          "total_loc": 572
+        },
+        "ftgo-delivery-service": {
+          "file_count": 26,
+          "total_loc": 1187
+        },
+        "ftgo-kitchen-service": {
+          "file_count": 32,
+          "total_loc": 1101
+        },
+        "ftgo-order-history-service": {
+          "file_count": 24,
+          "total_loc": 1493
+        },
+        "ftgo-order-service": {
+          "file_count": 94,
+          "total_loc": 4248
+        },
+        "ftgo-restaurant-service": {
+          "file_count": 18,
+          "total_loc": 573
+        }
+      },
+      "total_files": 337,
+      "total_loc": 13745,
+      "unresolved_files": 82,
+      "unresolved_loc": 3288,
+      "file_ranges": {
+        "ftgo-accounting-service": [
+          [
+            3,
+            25
+          ]
+        ],
+        "ftgo-api-gateway": [
+          [
+            30,
+            49
+          ]
+        ],
+        "ftgo-consumer-service": [
+          [
+            61,
+            78
+          ]
+        ],
+        "ftgo-delivery-service": [
+          [
+            80,
+            105
+          ]
+        ],
+        "ftgo-kitchen-service": [
+          [
+            113,
+            144
+          ]
+        ],
+        "ftgo-order-history-service": [
+          [
+            163,
+            186
+          ]
+        ],
+        "ftgo-order-service": [
+          [
+            187,
+            280
+          ]
+        ],
+        "ftgo-restaurant-service": [
+          [
+            293,
+            310
+          ]
+        ]
+      }
+    },
+    "JavaScript": {
+      "services": {},
+      "total_files": 10,
+      "total_loc": 531,
+      "unresolved_files": 10,
+      "unresolved_loc": 531,
+      "file_ranges": {}
+    },
+    "TypeScript": {
+      "services": {},
+      "total_files": 1,
+      "total_loc": 32,
+      "unresolved_files": 1,
+      "unresolved_loc": 32,
+      "file_ranges": {}
+    }
+  }
+}

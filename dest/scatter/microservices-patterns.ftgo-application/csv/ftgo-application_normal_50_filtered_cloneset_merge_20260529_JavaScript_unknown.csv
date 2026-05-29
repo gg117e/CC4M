@@ -1,0 +1,5 @@
+clone_id,file_path_x,file_path_y,file_id_x,file_id_y,start_line_x,end_line_x,start_line_y,end_line_y,service_x,service_y,relation,comodified,comodified_commits,comodification_count,file_type_x,file_type_y,token_count
+1,ftgo-api-gateway-graphql/src/ConsumerServiceProxy.js,ftgo-api-gateway-graphql/src/RestaurantServiceProxy.js,1,4,47,58,25,36,,,,0,[],0,logic,logic,0
+2,ftgo-api-gateway-graphql/tests/unit/client.test.js,ftgo-api-gateway-graphql/tests/unit/schema.test.js,8,9,13,24,107,119,,,,0,[],0,test,test,0
+3,ftgo-api-gateway-graphql/tests/unit/client.test.js,ftgo-api-gateway-graphql/tests/unit/schema.test.js,8,9,5,23,5,23,,,,0,[],0,test,test,0
+4,ftgo-api-gateway-graphql/tests/unit/client.test.js,ftgo-api-gateway-graphql/tests/unit/schema.test.js,8,9,13,31,79,97,,,,0,[],0,test,test,0
