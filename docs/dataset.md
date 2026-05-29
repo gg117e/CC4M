@@ -65,13 +65,13 @@ Per-project commit caps (`MAX_ANALYZED_COMMITS` in `config.py`) appear in the **
 
 | Project | Languages | Commits | Notes |
 | --- | --- | --- | --- |
-| [FudanSELab/train-ticket](https://github.com/FudanSELab/train-ticket) | Java, JavaScript | Merge, no cap | Java results only — see note below |
-| [microservices-patterns/ftgo-application](https://github.com/microservices-patterns/ftgo-application) | Java | Merge, no cap | |
-| [lightstep/opentelemetry-examples](https://github.com/lightstep/opentelemetry-examples) | Python, Java, Go, JavaScript | Merge, no cap | |
+| [FudanSELab/train-ticket](https://github.com/FudanSELab/train-ticket) | Go, Java, JavaScript, Python | Merge, no cap | Java results only — see note below; no clones detected for Go and Python |
+| [microservices-patterns/ftgo-application](https://github.com/microservices-patterns/ftgo-application) | Java, JavaScript, TypeScript | Merge, no cap | No clones detected for TypeScript |
+| [lightstep/opentelemetry-examples](https://github.com/lightstep/opentelemetry-examples) | C, Go, Java, JavaScript, Python | Merge, no cap | No clones detected for C |
 | [Microservice-API-Patterns/LakesideMutual](https://github.com/Microservice-API-Patterns/LakesideMutual) | Java, JavaScript | Merge, no cap | |
-| [stackroute/ibm-wave7-lifeline](https://github.com/stackroute/ibm-wave7-lifeline) | Java | Merge, no cap | |
-| [tgrall/redis-microservices-demo](https://github.com/tgrall/redis-microservices-demo) | Java, JavaScript | Merge, no cap | |
-| [FightPandemics/FightPandemics](https://github.com/FightPandemics/FightPandemics) | JavaScript (Node.js / React) | Merge, last 10 | ~600 merge commits, capped to the 10 most recent |
+| [stackroute/ibm-wave7-lifeline](https://github.com/stackroute/ibm-wave7-lifeline) | Java, JavaScript, TypeScript | Merge, no cap | No clones detected for JavaScript |
+| [tgrall/redis-microservices-demo](https://github.com/tgrall/redis-microservices-demo) | Java, JavaScript, Python, TypeScript | Merge, no cap | No clones detected for Python and TypeScript |
+| [FightPandemics/FightPandemics](https://github.com/FightPandemics/FightPandemics) | JavaScript | Merge, last 10 | ~600 merge commits, capped to the 10 most recent |
 
 ### Why These Projects
 
