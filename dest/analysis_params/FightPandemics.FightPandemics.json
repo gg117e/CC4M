@@ -1,0 +1,10 @@
+{
+  "detection_method": "normal",
+  "min_tokens": 50,
+  "import_filter": true,
+  "comod_method": "clone_set",
+  "analysis_method": "merge_commit",
+  "analysis_frequency": 50,
+  "search_depth": -1,
+  "max_analyzed_commits": 10
+}

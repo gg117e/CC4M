@@ -1,0 +1,70 @@
+{
+  "services": {
+    "cypresse2e/": [
+      "cypress-e2e-tests",
+      "cypress-e2e-report"
+    ],
+    "client/": [
+      "client"
+    ],
+    "mocha/": [
+      "mocha-integration"
+    ],
+    "backend/": [
+      "backend-service"
+    ]
+  },
+  "URL": "https://github.com/FightPandemics/FightPandemics",
+  "language_stats": {
+    "JavaScript": {
+      "services": {
+        "backend-service": {
+          "file_count": 58,
+          "total_loc": 7814
+        },
+        "client": {
+          "file_count": 312,
+          "total_loc": 37304
+        },
+        "cypress-e2e-tests": {
+          "file_count": 35,
+          "total_loc": 3359
+        },
+        "mocha-integration": {
+          "file_count": 14,
+          "total_loc": 902
+        }
+      },
+      "total_files": 436,
+      "total_loc": 50820,
+      "unresolved_files": 17,
+      "unresolved_loc": 1441,
+      "file_ranges": {
+        "backend-service": [
+          [
+            0,
+            57
+          ]
+        ],
+        "client": [
+          [
+            58,
+            369
+          ]
+        ],
+        "cypress-e2e-tests": [
+          [
+            370,
+            404
+          ]
+        ],
+        "mocha-integration": [
+          [
+            405,
+            418
+          ]
+        ]
+      }
+    }
+  }
+}
