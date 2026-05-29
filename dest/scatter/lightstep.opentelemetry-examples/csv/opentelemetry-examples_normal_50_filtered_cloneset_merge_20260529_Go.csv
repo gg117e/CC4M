@@ -1,0 +1,10 @@
+clone_id,file_path_x,file_path_y,file_id_x,file_id_y,start_line_x,end_line_x,start_line_y,end_line_y,service_x,service_y,relation,comodified,comodified_commits,comodification_count,file_type_x,file_type_y,token_count
+1,go/launcher/client/client.go,go/otlp/client/client.go,2,8,31,35,94,98,go-launcher-client,go-otlp-client,inter,0,[],0,logic,logic,0
+3,go/launcher/client/client.go,go/otlp/client/client.go,2,8,35,49,99,113,go-launcher-client,go-otlp-client,inter,0,[],0,logic,logic,0
+10,go/launcher/client/client.go,go/otlp/client/client.go,2,8,29,36,92,99,go-launcher-client,go-otlp-client,inter,0,[],0,logic,logic,0
+14,go/launcher/server/server.go,go/otlp/server/server.go,3,9,59,73,128,142,go-launcher-server,go-otlp-server,inter,0,[],0,logic,logic,0
+15,go/launcher/server/server.go,go/otlp/server/server.go,3,9,27,54,42,69,go-launcher-server,go-otlp-server,inter,0,[],0,logic,logic,0
+16,go/opentracing/server/server.go,go/otlp/server/server.go,7,9,29,58,40,69,go-opentracing-server,go-otlp-server,inter,0,[],0,logic,logic,0
+17,go/launcher/server/server.go,go/opentracing/server/server.go,3,7,27,55,31,59,go-launcher-server,go-opentracing-server,inter,0,[],0,logic,logic,0
+20,go/opentracing/client/client.go,go/opentracing/server/server.go,6,7,30,72,58,100,go-opentracing-client,go-opentracing-server,inter,0,[],0,logic,logic,0
+23,go/otlp/client/client.go,go/otlp/server/server.go,8,9,39,93,69,124,go-otlp-client,go-otlp-server,inter,0,[],0,logic,logic,0

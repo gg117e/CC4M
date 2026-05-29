@@ -1,0 +1,278 @@
+{
+  "service": [
+    {
+      "service": "demo-client-lstrace",
+      "clone_set_count": 1,
+      "inter_clone_set_count": 1,
+      "total_clone_line_count": 20,
+      "clone_avg_line_count": 20.0,
+      "clone_file_count": 1,
+      "roc": 0.47619,
+      "comod_count": 1,
+      "comod_other_service_count": 1
+    },
+    {
+      "service": "demo-client-otlp",
+      "clone_set_count": 1,
+      "inter_clone_set_count": 1,
+      "total_clone_line_count": 20,
+      "clone_avg_line_count": 20.0,
+      "clone_file_count": 1,
+      "roc": 0.666667,
+      "comod_count": 1,
+      "comod_other_service_count": 1
+    },
+    {
+      "service": "py-launcher-client",
+      "clone_set_count": 5,
+      "inter_clone_set_count": 5,
+      "total_clone_line_count": 87,
+      "clone_avg_line_count": 28.6,
+      "clone_file_count": 2,
+      "roc": 0.731092,
+      "comod_count": 0,
+      "comod_other_service_count": 0
+    },
+    {
+      "service": "py-lstrace-client",
+      "clone_set_count": 7,
+      "inter_clone_set_count": 7,
+      "total_clone_line_count": 87,
+      "clone_avg_line_count": 32.86,
+      "clone_file_count": 2,
+      "roc": 0.625899,
+      "comod_count": 0,
+      "comod_other_service_count": 0
+    },
+    {
+      "service": "py-opentracing-client",
+      "clone_set_count": 3,
+      "inter_clone_set_count": 3,
+      "total_clone_line_count": 54,
+      "clone_avg_line_count": 18.67,
+      "clone_file_count": 1,
+      "roc": 0.377622,
+      "comod_count": 0,
+      "comod_other_service_count": 0
+    },
+    {
+      "service": "py-otlp-server",
+      "clone_set_count": 7,
+      "inter_clone_set_count": 7,
+      "total_clone_line_count": 89,
+      "clone_avg_line_count": 33.43,
+      "clone_file_count": 2,
+      "roc": 0.546012,
+      "comod_count": 0,
+      "comod_other_service_count": 0
+    }
+  ],
+  "clone_set": [
+    {
+      "clone_id": "1",
+      "service_count": 4,
+      "cross_service_fragment_count": 4,
+      "cross_service_fragment_ratio": 1.0,
+      "cross_service_line_count": 44,
+      "cross_service_scale": 176,
+      "cross_service_element_count": 4,
+      "comod_count": 0,
+      "comod_fragment_count": 0,
+      "comod_fragment_ratio": 0.0
+    },
+    {
+      "clone_id": "2",
+      "service_count": 4,
+      "cross_service_fragment_count": 4,
+      "cross_service_fragment_ratio": 1.0,
+      "cross_service_line_count": 36,
+      "cross_service_scale": 144,
+      "cross_service_element_count": 4,
+      "comod_count": 0,
+      "comod_fragment_count": 0,
+      "comod_fragment_ratio": 0.0
+    },
+    {
+      "clone_id": "3",
+      "service_count": 2,
+      "cross_service_fragment_count": 2,
+      "cross_service_fragment_ratio": 1.0,
+      "cross_service_line_count": 40,
+      "cross_service_scale": 80,
+      "cross_service_element_count": 2,
+      "comod_count": 1,
+      "comod_fragment_count": 2,
+      "comod_fragment_ratio": 1.0
+    },
+    {
+      "clone_id": "4",
+      "service_count": 3,
+      "cross_service_fragment_count": 3,
+      "cross_service_fragment_ratio": 1.0,
+      "cross_service_line_count": 65,
+      "cross_service_scale": 195,
+      "cross_service_element_count": 3,
+      "comod_count": 0,
+      "comod_fragment_count": 0,
+      "comod_fragment_ratio": 0.0
+    },
+    {
+      "clone_id": "5",
+      "service_count": 2,
+      "cross_service_fragment_count": 2,
+      "cross_service_fragment_ratio": 1.0,
+      "cross_service_line_count": 44,
+      "cross_service_scale": 88,
+      "cross_service_element_count": 2,
+      "comod_count": 0,
+      "comod_fragment_count": 0,
+      "comod_fragment_ratio": 0.0
+    },
+    {
+      "clone_id": "6",
+      "service_count": 4,
+      "cross_service_fragment_count": 4,
+      "cross_service_fragment_ratio": 1.0,
+      "cross_service_line_count": 144,
+      "cross_service_scale": 576,
+      "cross_service_element_count": 4,
+      "comod_count": 0,
+      "comod_fragment_count": 0,
+      "comod_fragment_ratio": 0.0
+    },
+    {
+      "clone_id": "7",
+      "service_count": 3,
+      "cross_service_fragment_count": 3,
+      "cross_service_fragment_ratio": 1.0,
+      "cross_service_line_count": 198,
+      "cross_service_scale": 594,
+      "cross_service_element_count": 3,
+      "comod_count": 0,
+      "comod_fragment_count": 0,
+      "comod_fragment_ratio": 0.0
+    },
+    {
+      "clone_id": "8",
+      "service_count": 2,
+      "cross_service_fragment_count": 2,
+      "cross_service_fragment_ratio": 1.0,
+      "cross_service_line_count": 132,
+      "cross_service_scale": 264,
+      "cross_service_element_count": 2,
+      "comod_count": 0,
+      "comod_fragment_count": 0,
+      "comod_fragment_ratio": 0.0
+    }
+  ],
+  "file": [
+    {
+      "file_path": "demo-client/lstrace/client.py",
+      "service": "demo-client-lstrace",
+      "sharing_service_count": 1,
+      "total_service_count": 6,
+      "cross_service_clone_set_count": 1,
+      "cross_service_clone_set_ratio": 1.0,
+      "sharing_service_ratio": 0.166667,
+      "cross_service_line_count": 20,
+      "cross_service_comod_count": 1,
+      "comod_shared_service_count": 1
+    },
+    {
+      "file_path": "demo-client/otlp/client.py",
+      "service": "demo-client-otlp",
+      "sharing_service_count": 1,
+      "total_service_count": 6,
+      "cross_service_clone_set_count": 1,
+      "cross_service_clone_set_ratio": 1.0,
+      "sharing_service_ratio": 0.166667,
+      "cross_service_line_count": 20,
+      "cross_service_comod_count": 1,
+      "comod_shared_service_count": 1
+    },
+    {
+      "file_path": "python/launcher/client.py",
+      "service": "py-launcher-client",
+      "sharing_service_count": 2,
+      "total_service_count": 6,
+      "cross_service_clone_set_count": 1,
+      "cross_service_clone_set_ratio": 1.0,
+      "sharing_service_ratio": 0.333333,
+      "cross_service_line_count": 21,
+      "cross_service_comod_count": 0,
+      "comod_shared_service_count": 0
+    },
+    {
+      "file_path": "python/launcher/server.py",
+      "service": "py-launcher-client",
+      "sharing_service_count": 3,
+      "total_service_count": 6,
+      "cross_service_clone_set_count": 4,
+      "cross_service_clone_set_ratio": 1.0,
+      "sharing_service_ratio": 0.5,
+      "cross_service_line_count": 122,
+      "cross_service_comod_count": 0,
+      "comod_shared_service_count": 0
+    },
+    {
+      "file_path": "python/lstrace/client.py",
+      "service": "py-lstrace-client",
+      "sharing_service_count": 2,
+      "total_service_count": 6,
+      "cross_service_clone_set_count": 2,
+      "cross_service_clone_set_ratio": 1.0,
+      "sharing_service_ratio": 0.333333,
+      "cross_service_line_count": 42,
+      "cross_service_comod_count": 0,
+      "comod_shared_service_count": 0
+    },
+    {
+      "file_path": "python/lstrace/server.py",
+      "service": "py-lstrace-client",
+      "sharing_service_count": 3,
+      "total_service_count": 6,
+      "cross_service_clone_set_count": 5,
+      "cross_service_clone_set_ratio": 1.0,
+      "sharing_service_ratio": 0.5,
+      "cross_service_line_count": 188,
+      "cross_service_comod_count": 0,
+      "comod_shared_service_count": 0
+    },
+    {
+      "file_path": "python/opentracing/server.py",
+      "service": "py-opentracing-client",
+      "sharing_service_count": 3,
+      "total_service_count": 6,
+      "cross_service_clone_set_count": 3,
+      "cross_service_clone_set_ratio": 1.0,
+      "sharing_service_ratio": 0.5,
+      "cross_service_line_count": 56,
+      "cross_service_comod_count": 0,
+      "comod_shared_service_count": 0
+    },
+    {
+      "file_path": "python/otlp/client.py",
+      "service": "py-otlp-server",
+      "sharing_service_count": 2,
+      "total_service_count": 6,
+      "cross_service_clone_set_count": 2,
+      "cross_service_clone_set_ratio": 1.0,
+      "sharing_service_ratio": 0.333333,
+      "cross_service_line_count": 46,
+      "cross_service_comod_count": 0,
+      "comod_shared_service_count": 0
+    },
+    {
+      "file_path": "python/otlp/server.py",
+      "service": "py-otlp-server",
+      "sharing_service_count": 3,
+      "total_service_count": 6,
+      "cross_service_clone_set_count": 5,
+      "cross_service_clone_set_ratio": 1.0,
+      "sharing_service_ratio": 0.5,
+      "cross_service_line_count": 188,
+      "cross_service_comod_count": 0,
+      "comod_shared_service_count": 0
+    }
+  ]
+}

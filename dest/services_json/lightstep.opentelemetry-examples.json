@@ -1,0 +1,345 @@
+{
+  "services": {
+    "java/microdonuts/": [
+      "java-opentracing-server"
+    ],
+    "go/otlp/server/": [
+      "go-otlp-server"
+    ],
+    "nodejs/launcher/server/": [
+      "js-launcher-server"
+    ],
+    "python/lstrace/": [
+      "py-lstrace-client",
+      "py-lstrace-server"
+    ],
+    "go/launcher/client/": [
+      "go-launcher-client"
+    ],
+    "java/otlp/": [
+      "java-otlp-server",
+      "java-otlp-client"
+    ],
+    "nodejs/launcher/client/": [
+      "js-launcher-client"
+    ],
+    "nodejs/server/": [
+      "js-lstrace-server"
+    ],
+    "python/launcher/": [
+      "py-launcher-client",
+      "py-launcher-server"
+    ],
+    "demo-client/lstrace/": [
+      "demo-client-lstrace"
+    ],
+    "go/opentracing/client/": [
+      "go-opentracing-client"
+    ],
+    "dotnet/server/": [
+      "dotnet-otlp-server"
+    ],
+    "java/client/": [
+      "java-specialagent-client"
+    ],
+    "go/launcher/server/": [
+      "go-launcher-server"
+    ],
+    "go/otlp/client/": [
+      "go-otlp-client"
+    ],
+    "nodejs/client/": [
+      "js-lstrace-client"
+    ],
+    "python/otlp/": [
+      "py-otlp-server",
+      "py-collector-server",
+      "py-collector-client",
+      "py-otlp-client"
+    ],
+    "go/opentracing/server/": [
+      "go-opentracing-server"
+    ],
+    "demo-client/otlp/": [
+      "demo-client-otlp"
+    ],
+    "python/opentracing/": [
+      "py-opentracing-client",
+      "py-opentracing-server"
+    ],
+    "java/server/": [
+      "java-specialagent-server"
+    ]
+  },
+  "URL": "https://github.com/lightstep/opentelemetry-examples",
+  "language_stats": {
+    "JavaScript": {
+      "services": {
+        "dotnet-otlp-server": {
+          "file_count": 13,
+          "total_loc": 25029
+        },
+        "java-opentracing-server": {
+          "file_count": 5,
+          "total_loc": 6465
+        },
+        "js-launcher-client": {
+          "file_count": 1,
+          "total_loc": 27
+        },
+        "js-launcher-server": {
+          "file_count": 1,
+          "total_loc": 28
+        },
+        "js-lstrace-client": {
+          "file_count": 1,
+          "total_loc": 31
+        },
+        "js-lstrace-server": {
+          "file_count": 1,
+          "total_loc": 27
+        }
+      },
+      "total_files": 30,
+      "total_loc": 31982,
+      "unresolved_files": 8,
+      "unresolved_loc": 375,
+      "file_ranges": {
+        "dotnet-otlp-server": [
+          [
+            5,
+            17
+          ]
+        ],
+        "java-opentracing-server": [
+          [
+            18,
+            22
+          ]
+        ],
+        "js-launcher-client": [
+          [
+            26,
+            26
+          ]
+        ],
+        "js-launcher-server": [
+          [
+            27,
+            27
+          ]
+        ],
+        "js-lstrace-client": [
+          [
+            23,
+            23
+          ]
+        ],
+        "js-lstrace-server": [
+          [
+            28,
+            28
+          ]
+        ]
+      }
+    },
+    "Go": {
+      "services": {
+        "go-launcher-client": {
+          "file_count": 1,
+          "total_loc": 59
+        },
+        "go-launcher-server": {
+          "file_count": 1,
+          "total_loc": 73
+        },
+        "go-opentracing-client": {
+          "file_count": 1,
+          "total_loc": 96
+        },
+        "go-opentracing-server": {
+          "file_count": 1,
+          "total_loc": 116
+        },
+        "go-otlp-client": {
+          "file_count": 1,
+          "total_loc": 122
+        },
+        "go-otlp-server": {
+          "file_count": 1,
+          "total_loc": 142
+        }
+      },
+      "total_files": 11,
+      "total_loc": 1035,
+      "unresolved_files": 5,
+      "unresolved_loc": 427,
+      "file_ranges": {
+        "go-launcher-client": [
+          [
+            2,
+            2
+          ]
+        ],
+        "go-launcher-server": [
+          [
+            3,
+            3
+          ]
+        ],
+        "go-opentracing-client": [
+          [
+            6,
+            6
+          ]
+        ],
+        "go-opentracing-server": [
+          [
+            7,
+            7
+          ]
+        ],
+        "go-otlp-client": [
+          [
+            8,
+            8
+          ]
+        ],
+        "go-otlp-server": [
+          [
+            9,
+            9
+          ]
+        ]
+      }
+    },
+    "C": {
+      "services": {},
+      "total_files": 0,
+      "total_loc": 0,
+      "unresolved_files": 0,
+      "unresolved_loc": 0,
+      "file_ranges": {}
+    },
+    "Python": {
+      "services": {
+        "demo-client-lstrace": {
+          "file_count": 1,
+          "total_loc": 42
+        },
+        "demo-client-otlp": {
+          "file_count": 1,
+          "total_loc": 30
+        },
+        "py-launcher-client": {
+          "file_count": 2,
+          "total_loc": 119
+        },
+        "py-lstrace-client": {
+          "file_count": 3,
+          "total_loc": 139
+        },
+        "py-opentracing-client": {
+          "file_count": 2,
+          "total_loc": 143
+        },
+        "py-otlp-server": {
+          "file_count": 3,
+          "total_loc": 163
+        }
+      },
+      "total_files": 16,
+      "total_loc": 766,
+      "unresolved_files": 4,
+      "unresolved_loc": 130,
+      "file_ranges": {
+        "demo-client-lstrace": [
+          [
+            0,
+            0
+          ]
+        ],
+        "demo-client-otlp": [
+          [
+            1,
+            1
+          ]
+        ],
+        "py-launcher-client": [
+          [
+            5,
+            6
+          ]
+        ],
+        "py-lstrace-client": [
+          [
+            7,
+            9
+          ]
+        ],
+        "py-opentracing-client": [
+          [
+            10,
+            11
+          ]
+        ],
+        "py-otlp-server": [
+          [
+            12,
+            14
+          ]
+        ]
+      }
+    },
+    "Java": {
+      "services": {
+        "java-opentracing-server": {
+          "file_count": 12,
+          "total_loc": 742
+        },
+        "java-otlp-server": {
+          "file_count": 3,
+          "total_loc": 334
+        },
+        "java-specialagent-client": {
+          "file_count": 1,
+          "total_loc": 35
+        },
+        "java-specialagent-server": {
+          "file_count": 2,
+          "total_loc": 68
+        }
+      },
+      "total_files": 18,
+      "total_loc": 1179,
+      "unresolved_files": 0,
+      "unresolved_loc": 0,
+      "file_ranges": {
+        "java-opentracing-server": [
+          [
+            1,
+            12
+          ]
+        ],
+        "java-otlp-server": [
+          [
+            13,
+            15
+          ]
+        ],
+        "java-specialagent-client": [
+          [
+            0,
+            0
+          ]
+        ],
+        "java-specialagent-server": [
+          [
+            16,
+            17
+          ]
+        ]
+      }
+    }
+  }
+}

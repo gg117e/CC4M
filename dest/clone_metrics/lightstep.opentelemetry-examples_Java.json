@@ -1,0 +1,268 @@
+{
+  "service": [
+    {
+      "service": "java-opentracing-server",
+      "clone_set_count": 3,
+      "inter_clone_set_count": 0,
+      "total_clone_line_count": 70,
+      "clone_avg_line_count": 14.33,
+      "clone_file_count": 4,
+      "roc": 0.09434,
+      "comod_count": 0,
+      "comod_other_service_count": 0
+    },
+    {
+      "service": "java-otlp-server",
+      "clone_set_count": 5,
+      "inter_clone_set_count": 4,
+      "total_clone_line_count": 163,
+      "clone_avg_line_count": 27.17,
+      "clone_file_count": 3,
+      "roc": 0.488024,
+      "comod_count": 0,
+      "comod_other_service_count": 0
+    },
+    {
+      "service": "java-specialagent-client",
+      "clone_set_count": 1,
+      "inter_clone_set_count": 1,
+      "total_clone_line_count": 10,
+      "clone_avg_line_count": 10.0,
+      "clone_file_count": 1,
+      "roc": 0.285714,
+      "comod_count": 0,
+      "comod_other_service_count": 0
+    },
+    {
+      "service": "java-specialagent-server",
+      "clone_set_count": 3,
+      "inter_clone_set_count": 3,
+      "total_clone_line_count": 39,
+      "clone_avg_line_count": 13.0,
+      "clone_file_count": 2,
+      "roc": 0.573529,
+      "comod_count": 0,
+      "comod_other_service_count": 0
+    }
+  ],
+  "clone_set": [
+    {
+      "clone_id": "1",
+      "service_count": 1,
+      "cross_service_fragment_count": 0,
+      "cross_service_fragment_ratio": 0.0,
+      "cross_service_line_count": 0,
+      "cross_service_scale": 0,
+      "cross_service_element_count": 0,
+      "comod_count": 0,
+      "comod_fragment_count": 0,
+      "comod_fragment_ratio": 0.0
+    },
+    {
+      "clone_id": "2",
+      "service_count": 1,
+      "cross_service_fragment_count": 0,
+      "cross_service_fragment_ratio": 0.0,
+      "cross_service_line_count": 0,
+      "cross_service_scale": 0,
+      "cross_service_element_count": 0,
+      "comod_count": 0,
+      "comod_fragment_count": 0,
+      "comod_fragment_ratio": 0.0
+    },
+    {
+      "clone_id": "3",
+      "service_count": 2,
+      "cross_service_fragment_count": 2,
+      "cross_service_fragment_ratio": 1.0,
+      "cross_service_line_count": 22,
+      "cross_service_scale": 44,
+      "cross_service_element_count": 2,
+      "comod_count": 0,
+      "comod_fragment_count": 0,
+      "comod_fragment_ratio": 0.0
+    },
+    {
+      "clone_id": "4",
+      "service_count": 1,
+      "cross_service_fragment_count": 0,
+      "cross_service_fragment_ratio": 0.0,
+      "cross_service_line_count": 0,
+      "cross_service_scale": 0,
+      "cross_service_element_count": 0,
+      "comod_count": 0,
+      "comod_fragment_count": 0,
+      "comod_fragment_ratio": 0.0
+    },
+    {
+      "clone_id": "5",
+      "service_count": 2,
+      "cross_service_fragment_count": 2,
+      "cross_service_fragment_ratio": 1.0,
+      "cross_service_line_count": 32,
+      "cross_service_scale": 64,
+      "cross_service_element_count": 2,
+      "comod_count": 0,
+      "comod_fragment_count": 0,
+      "comod_fragment_ratio": 0.0
+    },
+    {
+      "clone_id": "6",
+      "service_count": 2,
+      "cross_service_fragment_count": 2,
+      "cross_service_fragment_ratio": 1.0,
+      "cross_service_line_count": 24,
+      "cross_service_scale": 48,
+      "cross_service_element_count": 2,
+      "comod_count": 0,
+      "comod_fragment_count": 0,
+      "comod_fragment_ratio": 0.0
+    },
+    {
+      "clone_id": "7",
+      "service_count": 2,
+      "cross_service_fragment_count": 2,
+      "cross_service_fragment_ratio": 1.0,
+      "cross_service_line_count": 19,
+      "cross_service_scale": 38,
+      "cross_service_element_count": 2,
+      "comod_count": 0,
+      "comod_fragment_count": 0,
+      "comod_fragment_ratio": 0.0
+    },
+    {
+      "clone_id": "8",
+      "service_count": 1,
+      "cross_service_fragment_count": 0,
+      "cross_service_fragment_ratio": 0.0,
+      "cross_service_line_count": 0,
+      "cross_service_scale": 0,
+      "cross_service_element_count": 0,
+      "comod_count": 0,
+      "comod_fragment_count": 0,
+      "comod_fragment_ratio": 0.0
+    }
+  ],
+  "file": [
+    {
+      "file_path": "java/client/src/main/java/com/lightstep/examples/client/App.java",
+      "service": "java-specialagent-client",
+      "sharing_service_count": 1,
+      "total_service_count": 4,
+      "cross_service_clone_set_count": 1,
+      "cross_service_clone_set_ratio": 1.0,
+      "sharing_service_ratio": 0.25,
+      "cross_service_line_count": 10,
+      "cross_service_comod_count": 0,
+      "comod_shared_service_count": 0
+    },
+    {
+      "file_path": "java/microdonuts/src/main/java/com/otsample/api/ApiContextHandler.java",
+      "service": "java-opentracing-server",
+      "sharing_service_count": 0,
+      "total_service_count": 4,
+      "cross_service_clone_set_count": 0,
+      "cross_service_clone_set_ratio": 0.0,
+      "sharing_service_ratio": 0.0,
+      "cross_service_line_count": 0,
+      "cross_service_comod_count": 0,
+      "comod_shared_service_count": 0
+    },
+    {
+      "file_path": "java/microdonuts/src/main/java/com/otsample/api/KitchenContextHandler.java",
+      "service": "java-opentracing-server",
+      "sharing_service_count": 0,
+      "total_service_count": 4,
+      "cross_service_clone_set_count": 0,
+      "cross_service_clone_set_ratio": 0.0,
+      "sharing_service_ratio": 0.0,
+      "cross_service_line_count": 0,
+      "cross_service_comod_count": 0,
+      "comod_shared_service_count": 0
+    },
+    {
+      "file_path": "java/microdonuts/src/main/java/com/otsample/api/resources/DonutRequest.java",
+      "service": "java-opentracing-server",
+      "sharing_service_count": 0,
+      "total_service_count": 4,
+      "cross_service_clone_set_count": 0,
+      "cross_service_clone_set_ratio": 0.0,
+      "sharing_service_ratio": 0.0,
+      "cross_service_line_count": 0,
+      "cross_service_comod_count": 0,
+      "comod_shared_service_count": 0
+    },
+    {
+      "file_path": "java/microdonuts/src/main/java/com/otsample/api/resources/StatusRes.java",
+      "service": "java-opentracing-server",
+      "sharing_service_count": 0,
+      "total_service_count": 4,
+      "cross_service_clone_set_count": 0,
+      "cross_service_clone_set_ratio": 0.0,
+      "sharing_service_ratio": 0.0,
+      "cross_service_line_count": 0,
+      "cross_service_comod_count": 0,
+      "comod_shared_service_count": 0
+    },
+    {
+      "file_path": "java/otlp/src/main/java/com/lightstep/otlp/client/Client.java",
+      "service": "java-otlp-server",
+      "sharing_service_count": 1,
+      "total_service_count": 4,
+      "cross_service_clone_set_count": 1,
+      "cross_service_clone_set_ratio": 0.5,
+      "sharing_service_ratio": 0.25,
+      "cross_service_line_count": 9,
+      "cross_service_comod_count": 0,
+      "comod_shared_service_count": 0
+    },
+    {
+      "file_path": "java/otlp/src/main/java/com/lightstep/otlp/server/ApiContextHandler.java",
+      "service": "java-otlp-server",
+      "sharing_service_count": 1,
+      "total_service_count": 4,
+      "cross_service_clone_set_count": 2,
+      "cross_service_clone_set_ratio": 1.0,
+      "sharing_service_ratio": 0.25,
+      "cross_service_line_count": 28,
+      "cross_service_comod_count": 0,
+      "comod_shared_service_count": 0
+    },
+    {
+      "file_path": "java/otlp/src/main/java/com/lightstep/otlp/server/ExampleServer.java",
+      "service": "java-otlp-server",
+      "sharing_service_count": 1,
+      "total_service_count": 4,
+      "cross_service_clone_set_count": 1,
+      "cross_service_clone_set_ratio": 0.5,
+      "sharing_service_ratio": 0.25,
+      "cross_service_line_count": 11,
+      "cross_service_comod_count": 0,
+      "comod_shared_service_count": 0
+    },
+    {
+      "file_path": "java/server/src/main/java/com/lightstep/examples/server/ApiContextHandler.java",
+      "service": "java-specialagent-server",
+      "sharing_service_count": 1,
+      "total_service_count": 4,
+      "cross_service_clone_set_count": 2,
+      "cross_service_clone_set_ratio": 1.0,
+      "sharing_service_ratio": 0.25,
+      "cross_service_line_count": 28,
+      "cross_service_comod_count": 0,
+      "comod_shared_service_count": 0
+    },
+    {
+      "file_path": "java/server/src/main/java/com/lightstep/examples/server/App.java",
+      "service": "java-specialagent-server",
+      "sharing_service_count": 1,
+      "total_service_count": 4,
+      "cross_service_clone_set_count": 1,
+      "cross_service_clone_set_ratio": 1.0,
+      "sharing_service_ratio": 0.25,
+      "cross_service_line_count": 11,
+      "cross_service_comod_count": 0,
+      "comod_shared_service_count": 0
+    }
+  ]
+}

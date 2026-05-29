@@ -1,0 +1,17 @@
+clone_id,fragment_index,file_path,file_id,service,start_line,end_line,line_count,file_type,modified_commits,modified_count
+1,0,java/microdonuts/src/main/java/com/otsample/api/ApiContextHandler.java,1,java-opentracing-server,42,58,17,logic,[],0
+1,1,java/microdonuts/src/main/java/com/otsample/api/KitchenContextHandler.java,4,java-opentracing-server,62,78,17,logic,[],0
+2,0,java/microdonuts/src/main/java/com/otsample/api/resources/DonutRequest.java,8,java-opentracing-server,14,22,9,logic,[],0
+2,1,java/microdonuts/src/main/java/com/otsample/api/resources/StatusRes.java,11,java-opentracing-server,21,29,9,logic,[],0
+3,0,java/otlp/src/main/java/com/lightstep/otlp/server/ExampleServer.java,15,java-otlp-server,102,112,11,logic,[],0
+3,1,java/server/src/main/java/com/lightstep/examples/server/App.java,17,java-specialagent-server,12,22,11,logic,[],0
+4,0,java/microdonuts/src/main/java/com/otsample/api/ApiContextHandler.java,1,java-opentracing-server,112,128,17,logic,[],0
+4,1,java/microdonuts/src/main/java/com/otsample/api/KitchenContextHandler.java,4,java-opentracing-server,63,79,17,logic,[],0
+5,0,java/otlp/src/main/java/com/lightstep/otlp/server/ApiContextHandler.java,14,java-otlp-server,20,35,16,logic,[],0
+5,1,java/server/src/main/java/com/lightstep/examples/server/ApiContextHandler.java,16,java-specialagent-server,13,28,16,logic,[],0
+6,0,java/otlp/src/main/java/com/lightstep/otlp/server/ApiContextHandler.java,14,java-otlp-server,67,78,12,logic,[],0
+6,1,java/server/src/main/java/com/lightstep/examples/server/ApiContextHandler.java,16,java-specialagent-server,34,45,12,logic,[],0
+7,0,java/client/src/main/java/com/lightstep/examples/client/App.java,0,java-specialagent-client,23,32,10,logic,[],0
+7,1,java/otlp/src/main/java/com/lightstep/otlp/client/Client.java,13,java-otlp-server,127,135,9,logic,[],0
+8,0,java/otlp/src/main/java/com/lightstep/otlp/client/Client.java,13,java-otlp-server,43,100,58,logic,[],0
+8,1,java/otlp/src/main/java/com/lightstep/otlp/server/ExampleServer.java,15,java-otlp-server,36,92,57,logic,[],0
