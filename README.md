@@ -8,6 +8,8 @@ serves an interactive scatter plot with metric-based filtering.
 
 > **Screencast:** https://www.youtube.com/watch?v=0xOIQPFbkUg
 
+> **Paper:** [ICSME 2026 paper (PDF)](docs/ICSME2026_CC4M_paper.pdf)
+
 ## Quick Start
 
 Run CC4M with Docker:
