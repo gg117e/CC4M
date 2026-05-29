@@ -1,0 +1,221 @@
+{
+  "service": [
+    {
+      "service": "app-comments",
+      "clone_set_count": 1,
+      "inter_clone_set_count": 1,
+      "total_clone_line_count": 8,
+      "clone_avg_line_count": 8.0,
+      "clone_file_count": 1,
+      "roc": 0.032787,
+      "comod_count": 0,
+      "comod_other_service_count": 0
+    },
+    {
+      "service": "app-frontend",
+      "clone_set_count": 6,
+      "inter_clone_set_count": 0,
+      "total_clone_line_count": 160,
+      "clone_avg_line_count": 23.12,
+      "clone_file_count": 6,
+      "roc": 0.338266,
+      "comod_count": 0,
+      "comod_other_service_count": 0
+    },
+    {
+      "service": "ws-notifications-service",
+      "clone_set_count": 1,
+      "inter_clone_set_count": 1,
+      "total_clone_line_count": 7,
+      "clone_avg_line_count": 7.0,
+      "clone_file_count": 1,
+      "roc": 0.212121,
+      "comod_count": 0,
+      "comod_other_service_count": 0
+    }
+  ],
+  "clone_set": [
+    {
+      "clone_id": "1",
+      "service_count": 1,
+      "cross_service_fragment_count": 0,
+      "cross_service_fragment_ratio": 0.0,
+      "cross_service_line_count": 0,
+      "cross_service_scale": 0,
+      "cross_service_element_count": 0,
+      "comod_count": 0,
+      "comod_fragment_count": 0,
+      "comod_fragment_ratio": 0.0
+    },
+    {
+      "clone_id": "2",
+      "service_count": 1,
+      "cross_service_fragment_count": 0,
+      "cross_service_fragment_ratio": 0.0,
+      "cross_service_line_count": 0,
+      "cross_service_scale": 0,
+      "cross_service_element_count": 0,
+      "comod_count": 0,
+      "comod_fragment_count": 0,
+      "comod_fragment_ratio": 0.0
+    },
+    {
+      "clone_id": "3",
+      "service_count": 2,
+      "cross_service_fragment_count": 2,
+      "cross_service_fragment_ratio": 1.0,
+      "cross_service_line_count": 15,
+      "cross_service_scale": 30,
+      "cross_service_element_count": 2,
+      "comod_count": 0,
+      "comod_fragment_count": 0,
+      "comod_fragment_ratio": 0.0
+    },
+    {
+      "clone_id": "4",
+      "service_count": 1,
+      "cross_service_fragment_count": 0,
+      "cross_service_fragment_ratio": 0.0,
+      "cross_service_line_count": 0,
+      "cross_service_scale": 0,
+      "cross_service_element_count": 0,
+      "comod_count": 0,
+      "comod_fragment_count": 0,
+      "comod_fragment_ratio": 0.0
+    },
+    {
+      "clone_id": "5",
+      "service_count": 1,
+      "cross_service_fragment_count": 0,
+      "cross_service_fragment_ratio": 0.0,
+      "cross_service_line_count": 0,
+      "cross_service_scale": 0,
+      "cross_service_element_count": 0,
+      "comod_count": 0,
+      "comod_fragment_count": 0,
+      "comod_fragment_ratio": 0.0
+    },
+    {
+      "clone_id": "6",
+      "service_count": 1,
+      "cross_service_fragment_count": 0,
+      "cross_service_fragment_ratio": 0.0,
+      "cross_service_line_count": 0,
+      "cross_service_scale": 0,
+      "cross_service_element_count": 0,
+      "comod_count": 0,
+      "comod_fragment_count": 0,
+      "comod_fragment_ratio": 0.0
+    },
+    {
+      "clone_id": "7",
+      "service_count": 1,
+      "cross_service_fragment_count": 0,
+      "cross_service_fragment_ratio": 0.0,
+      "cross_service_line_count": 0,
+      "cross_service_scale": 0,
+      "cross_service_element_count": 0,
+      "comod_count": 0,
+      "comod_fragment_count": 0,
+      "comod_fragment_ratio": 0.0
+    }
+  ],
+  "file": [
+    {
+      "file_path": "comments-service/server.js",
+      "service": "app-comments",
+      "sharing_service_count": 1,
+      "total_service_count": 3,
+      "cross_service_clone_set_count": 1,
+      "cross_service_clone_set_ratio": 1.0,
+      "sharing_service_ratio": 0.333333,
+      "cross_service_line_count": 8,
+      "cross_service_comod_count": 0,
+      "comod_shared_service_count": 0
+    },
+    {
+      "file_path": "notifications-service-node/server.js",
+      "service": "ws-notifications-service",
+      "sharing_service_count": 1,
+      "total_service_count": 3,
+      "cross_service_clone_set_count": 1,
+      "cross_service_clone_set_ratio": 1.0,
+      "sharing_service_ratio": 0.333333,
+      "cross_service_line_count": 7,
+      "cross_service_comod_count": 0,
+      "comod_shared_service_count": 0
+    },
+    {
+      "file_path": "ui-redis-front-end/redis-front/src/repositories/CacheInvalidatorRepository.js",
+      "service": "app-frontend",
+      "sharing_service_count": 0,
+      "total_service_count": 3,
+      "cross_service_clone_set_count": 0,
+      "cross_service_clone_set_ratio": 0.0,
+      "sharing_service_ratio": 0.0,
+      "cross_service_line_count": 0,
+      "cross_service_comod_count": 0,
+      "comod_shared_service_count": 0
+    },
+    {
+      "file_path": "ui-redis-front-end/redis-front/src/repositories/CommentsRepository.js",
+      "service": "app-frontend",
+      "sharing_service_count": 0,
+      "total_service_count": 3,
+      "cross_service_clone_set_count": 0,
+      "cross_service_clone_set_ratio": 0.0,
+      "sharing_service_ratio": 0.0,
+      "cross_service_line_count": 0,
+      "cross_service_comod_count": 0,
+      "comod_shared_service_count": 0
+    },
+    {
+      "file_path": "ui-redis-front-end/redis-front/src/repositories/DataStreamsProducerRepository.js",
+      "service": "app-frontend",
+      "sharing_service_count": 0,
+      "total_service_count": 3,
+      "cross_service_clone_set_count": 0,
+      "cross_service_clone_set_ratio": 0.0,
+      "sharing_service_ratio": 0.0,
+      "cross_service_line_count": 0,
+      "cross_service_comod_count": 0,
+      "comod_shared_service_count": 0
+    },
+    {
+      "file_path": "ui-redis-front-end/redis-front/src/repositories/DataStreamsRedisHashSyncRepository.js",
+      "service": "app-frontend",
+      "sharing_service_count": 0,
+      "total_service_count": 3,
+      "cross_service_clone_set_count": 0,
+      "cross_service_clone_set_ratio": 0.0,
+      "sharing_service_ratio": 0.0,
+      "cross_service_line_count": 0,
+      "cross_service_comod_count": 0,
+      "comod_shared_service_count": 0
+    },
+    {
+      "file_path": "ui-redis-front-end/redis-front/src/repositories/DataStreamsToGraphRepository.js",
+      "service": "app-frontend",
+      "sharing_service_count": 0,
+      "total_service_count": 3,
+      "cross_service_clone_set_count": 0,
+      "cross_service_clone_set_ratio": 0.0,
+      "sharing_service_ratio": 0.0,
+      "cross_service_line_count": 0,
+      "cross_service_comod_count": 0,
+      "comod_shared_service_count": 0
+    },
+    {
+      "file_path": "ui-redis-front-end/redis-front/src/repositories/RDBMSRepository.js",
+      "service": "app-frontend",
+      "sharing_service_count": 0,
+      "total_service_count": 3,
+      "cross_service_clone_set_count": 0,
+      "cross_service_clone_set_ratio": 0.0,
+      "sharing_service_ratio": 0.0,
+      "cross_service_line_count": 0,
+      "cross_service_comod_count": 0,
+      "comod_shared_service_count": 0
+    }
+  ]
+}

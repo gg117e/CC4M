@@ -1,0 +1,162 @@
+{
+  "services": {
+    "notifications-service-node/": [
+      "ws-notifications-service"
+    ],
+    "sql-rest-api/": [
+      "app-sql-rest-api"
+    ],
+    "comments-service/": [
+      "app-comments"
+    ],
+    "db-to-streams-service/": [
+      "app-db-to-streams"
+    ],
+    "streams-to-redisearch-service/": [
+      "app-streams-to-redis-hashes"
+    ],
+    "ui-redis-front-end/redis-front/": [
+      "app-frontend"
+    ],
+    "redis-server/": [
+      "app-redis"
+    ],
+    "streams-to-redisgraph-service/": [
+      "app-streams-to-redisgraph"
+    ],
+    "caching-service/": [
+      "app-caching"
+    ]
+  },
+  "URL": "https://github.com/tgrall/redis-microservices-demo",
+  "language_stats": {
+    "Java": {
+      "services": {
+        "app-caching": {
+          "file_count": 6,
+          "total_loc": 648
+        },
+        "app-db-to-streams": {
+          "file_count": 5,
+          "total_loc": 397
+        },
+        "app-sql-rest-api": {
+          "file_count": 5,
+          "total_loc": 322
+        },
+        "app-streams-to-redis-hashes": {
+          "file_count": 8,
+          "total_loc": 1276
+        },
+        "app-streams-to-redisgraph": {
+          "file_count": 3,
+          "total_loc": 386
+        }
+      },
+      "total_files": 27,
+      "total_loc": 3029,
+      "unresolved_files": 0,
+      "unresolved_loc": 0,
+      "file_ranges": {
+        "app-caching": [
+          [
+            0,
+            5
+          ]
+        ],
+        "app-db-to-streams": [
+          [
+            6,
+            10
+          ]
+        ],
+        "app-sql-rest-api": [
+          [
+            11,
+            15
+          ]
+        ],
+        "app-streams-to-redis-hashes": [
+          [
+            16,
+            23
+          ]
+        ],
+        "app-streams-to-redisgraph": [
+          [
+            24,
+            26
+          ]
+        ]
+      }
+    },
+    "JavaScript": {
+      "services": {
+        "app-comments": {
+          "file_count": 2,
+          "total_loc": 244
+        },
+        "app-frontend": {
+          "file_count": 15,
+          "total_loc": 473
+        },
+        "ws-notifications-service": {
+          "file_count": 1,
+          "total_loc": 33
+        }
+      },
+      "total_files": 18,
+      "total_loc": 750,
+      "unresolved_files": 0,
+      "unresolved_loc": 0,
+      "file_ranges": {
+        "app-comments": [
+          [
+            0,
+            1
+          ]
+        ],
+        "app-frontend": [
+          [
+            3,
+            17
+          ]
+        ],
+        "ws-notifications-service": [
+          [
+            2,
+            2
+          ]
+        ]
+      }
+    },
+    "Python": {
+      "services": {},
+      "total_files": 1,
+      "total_loc": 3,
+      "unresolved_files": 1,
+      "unresolved_loc": 3,
+      "file_ranges": {}
+    },
+    "TypeScript": {
+      "services": {
+        "app-frontend": {
+          "file_count": 5,
+          "total_loc": 137
+        }
+      },
+      "total_files": 5,
+      "total_loc": 137,
+      "unresolved_files": 0,
+      "unresolved_loc": 0,
+      "file_ranges": {
+        "app-frontend": [
+          [
+            0,
+            4
+          ]
+        ]
+      }
+    }
+  }
+}
