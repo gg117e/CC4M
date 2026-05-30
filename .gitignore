@@ -51,5 +51,27 @@ dest/projects/
 /dataset/*
 !/dataset/.gitkeep
 
+# LaTeX build artifacts (paper/)
+# ----------------------------------------------------------------------------
+# Paper source is versioned: main.tex, references.bib, and figures under
+# paper/img/ (including paper/img/overview.pdf, which is a figure source).
+# The compiled paper PDF (paper/*.pdf) and intermediate files are not: the
+# published PDF is distributed separately, not shipped in-repo.
+# ----------------------------------------------------------------------------
+/paper/*.pdf
+/paper/**/*.aux
+/paper/**/*.bbl
+/paper/**/*.bcf
+/paper/**/*.blg
+/paper/**/*.fdb_latexmk
+/paper/**/*.fls
+/paper/**/*.lof
+/paper/**/*.log
+/paper/**/*.lot
+/paper/**/*.out
+/paper/**/*.run.xml
+/paper/**/*.synctex.gz
+/paper/**/*.toc
+
 # Local tool settings
 /.claude/

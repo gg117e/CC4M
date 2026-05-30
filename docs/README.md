@@ -11,6 +11,6 @@ Curated documentation for CC4M.
 | [declaration_filtering.md](declaration_filtering.md) | Declaration-line filtering before clone detection |
 | [file_classification.md](file_classification.md) | File-path / service / file-type handling |
 | [dataset.md](dataset.md) | Dataset, target selection, analyzed commits, demo data |
-| [ICSME2026_CC4M_paper.pdf](ICSME2026_CC4M_paper.pdf) | ICSME 2026 paper describing CC4M |
+| [../paper/](../paper/) | ICSME 2026 paper — LaTeX source (`main.tex`, `references.bib`) |
 
 The top-level [../README.md](../README.md) is the project entry point.
