@@ -54,11 +54,12 @@ dest/projects/
 # LaTeX build artifacts (paper/)
 # ----------------------------------------------------------------------------
 # Paper source is versioned: main.tex, references.bib, and figures under
-# paper/img/ (including paper/img/overview.pdf, which is a figure source).
-# The compiled paper PDF (paper/*.pdf) and intermediate files are not: the
-# published PDF is distributed separately, not shipped in-repo.
+# paper/img/. The published PDF (paper/ICSME2026_CC4M_paper.pdf) is also
+# versioned. Only the local LaTeX build output (paper/main.pdf, etc.) and
+# intermediate files are ignored.
 # ----------------------------------------------------------------------------
 /paper/*.pdf
+!/paper/ICSME2026_CC4M_paper.pdf
 /paper/**/*.aux
 /paper/**/*.bbl
 /paper/**/*.bcf
