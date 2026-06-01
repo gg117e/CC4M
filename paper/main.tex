@@ -204,9 +204,8 @@ Docker configuration files and estimates which directories correspond to applica
 % 
 
 \textsc{CC4M} then assigns each source file to a microservice based on the
-directory information obtained by CLAIM. This assignment is used to
-determine whether each clone pair is a within-service clone or a
-cross-service clone.
+directory information obtained by CLAIM. 
+This assignment classifies each clone pair as within-service or cross-service.
 
 % CC4M は，Docker Compose ファイルおよび関連する Dockerfile に基づく
 % 軽量な静的解析手法である CLAIM~\cite{Maggi2024CLAIM} を用いて，
@@ -313,8 +312,8 @@ modified in the same commit at least once.
 \textsc{CC4M} annotates each clone pair with three kinds of information:
 service-boundary, co-modification, and file-category.
 Using the service mapping computed in
-Section~\ref{sec:service_identification}, it classifies each pair
-as either a within-service clone or a cross-service clone. Using the
+Section~\ref{sec:service_identification}, it classifies each clone pair as either within-service or cross-service.
+Using the
 co-modification information computed in Section~\ref{sec:comodification},
 it records whether the pair has been co-modified in the Git history.
 
@@ -412,8 +411,8 @@ by service. Gray dotted lines indicate service boundaries. A clone pair
 is plotted at the coordinates of the two files containing the cloned
 fragments; color intensity encodes overlapping clone pairs for the same
 file pair. Points inside diagonal service blocks represent
-within-service clones, whereas points outside represent cross-service
-clones. This layout helps users locate clone concentrations across
+within-service clone pairs, whereas points outside represent cross-service
+clone pairs. This layout helps users locate clone concentrations across
 services without inspecting individual file paths.
 A filter panel lets users restrict the displayed clone pairs by service
 scope, file category, and co-modification count. In
@@ -451,73 +450,6 @@ clone set. Users can then select one or two fragments to view the
 corresponding source code. This staged workflow, from metric-based
 prioritization to code-level inspection, helps users focus on clone
 relationships that are more likely to affect maintenance tasks.
-
-
-% CC4M は次の 3 種類のビューを提供する:
-% (i) プロジェクト全体の統計を示す Statistics View,
-% (ii) クローンの空間的分布を示す Scatter Plot,
-% (iii) 複数メトリクスの組み合わせでクローンを絞り込む Metrics View.
-%
-% \textbf{Statistics View.}
-% Statistics View は, プロジェクト全体のクローン分布を俯瞰するビューである.
-% マイクロサービス数, ファイル数, クローンセット数, 総 LOC の集計値を言語別に
-% 整理し, クローンが集中しているサービスをランキング表示する.
-%
-% \textbf{Scatter Plot.}
-% Scatter Plot (Figure~\ref{fig:scatter_view}) では, 同じソースファイルを
-% 両軸に同じ順序で配置し, サービスごとにグループ化する.
-% 灰色の点線はサービス境界を示す. クローンペアは, クローン片を含む 2 つのファイルに
-% 対応する座標上にプロットされ, 同じファイルペア間に複数のクローンペアが存在する場合,
-% その重なりは点の色の濃さで表現される.
-% 対角線上のサービスブロック内にある点はサービス内クローンを,
-% ブロック外にある点はサービス間クローンを表す.
-% この設計により, 利用者は個々のファイルパスを確認しなくても,
-% サービスをまたぐクローンの分布を把握できる.
-%
-% 散布図上部のフィルタパネル (Figure~\ref{fig:scatter_view}) により,
-% 表示するクローンペアを複数の観点で絞り込める.
-% Figure~\ref{fig:scatter_view} では Service Scope を Cross に設定し,
-% サービス間クローンのみを表示している.
-% フィルタは組み合わせ可能であり, 例えばこれに file-category を Logic,
-% Co-modification Count を 1 以上で重ねると, 過去に協調的な修正を要した
-% サービス間 Logic クローンが浮かび上がる.
-%
-% 軸には数百件のファイルが並びうるため, 利用者は密な領域を拡大したり,
-% 特定のサービスブロックへパンしたりできる.
-% 点にホバーするとファイルパス・サービス名・
-% 重なりクローン数を含むツールチップが表示され, 点をクリックすると
-% 2 つのクローン片を並列表示する詳細パネルが開く.
-% 一致部分がハイライトされ, 周辺ソースコードも表示されるため,
-% クローンの文脈を確認できる.
-%
-% \smallskip\noindent\textbf{Metric View.}
-% Metric View は, クローン情報に対するメトリクスに基づく優先付けと
-% ドリルダウン分析を支援する. Scatter Plot がサービス境界をまたぐ
-% クローン分布を視覚的に把握するためのビューであるのに対し,
-% Metric View は, 計算されたメトリクスに基づいて, 保守上の影響が
-% 大きい可能性のあるサービス, クローンセット, ファイルを特定することを
-% 支援する.
-
-% Metric View は, 3 つの起点となる観点, すなわち
-% Microservice-Based (MS-Based), Clone-Set-Based, File-Based を提供する.
-% 各観点において, ユーザは複数のメトリクスフィルタを組み合わせることで,
-% 結果リストを絞り込むことができる.
-% Clone-Set-Based では, service span や co-modification frequency などの
-% メトリクスを用いて, 複数サービスにまたがるクローンセットや,
-% 過去に同時修正されたクローンセットに注目できる.
-% MS-Based では, 多数のサービス間クローンセットを含むサービスや,
-% クローン行率が高いサービスを特定できる.
-% File-Based では, 多くのサービスとクローンを共有しているファイルや,
-% サービス間の同時修正履歴を持つファイルを見つけることができる.
-
-% フィルタリングされた結果はランキング形式のリストとして表示されるため,
-% ユーザはソースコードを確認する前に, 調査対象を優先付けできる.
-% クローンセットを選択すると, Metric View はそのクローンセットに含まれる
-% フラグメントを表示する. その後, ユーザは 1 つまたは 2 つのフラグメントを
-% 選択し, 対応するソースコードを確認できる.
-% このような, メトリクスに基づく優先付けからコードレベルの確認へ進む
-% 段階的なワークフローにより, ユーザは保守作業に影響する可能性が高い
-% クローン関係に注目できる.
 
 
 
@@ -576,18 +508,17 @@ Python      & 1        & 5     & 360       & 0          & 0           \\
 % のフィルタを適用し, 最も濃い点として現れる予約完了ワークフローの並行実装クローンを見つける流れ.
 \smallskip\noindent\textbf{Scenario 1.}
 Consider a developer who reviews the system to understand where
-business-logic duplication concentrates across service boundaries.
+business logic duplication concentrates across service boundaries.
 Without a specific target in mind, they start from the \emph{Scatter Plot},
-which gives a visual overview of which service pairs share heavy logic
+which gives a visual overview of which service pairs share significant logic
 duplication. To narrow the view to such duplication, they apply the
 % concentrated logic duplication
 cross-service filter, the co-modification filter, and the Logic
 file-category filter. In the \emph{Scatter Plot} view, a dark-red point indicates a file
 pair with many overlapping clone pairs; such points are useful starting
 points because they suggest concentrated logic duplication between two
-files. By clicking this point and selecting the clone set with the largest
-number of lines in the file pair, they identify the largest
-cross-service clone in the file pair. The two fragments are located in
+files. By clicking this point and selecting the clone set with the most lines in the file pair, they identify the largest cross-service clone pair between the two files. 
+The two fragments are located in
 \texttt{PreserveServiceImpl.java}\footnote{\src{ts-preserve-service/src/main/java/preserve/service/PreserveServiceImpl.java\#L178-L286}{ts-preserve-service/src/main/java/preserve/service/PreserveServiceImpl.java:178-286}}
 of \mbox{ts-preserve-service} and
 \texttt{PreserveOtherServiceImpl.java}\footnote{\src{ts-preserve-other-service/src/main/java/preserveOther/service/PreserveOtherServiceImpl.java\#L183-L293}{ts-preserve-other-service/src/main/java/preserveOther/service/PreserveOtherServiceImpl.java:183-293}}
