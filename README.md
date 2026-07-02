@@ -73,6 +73,34 @@ make test
 make lint
 ```
 
+## Analyzed Projects
+
+CC4M has been applied to seven open-source, Docker-based microservice systems
+selected from a public [microservice benchmark dataset](https://github.com/darioamorosodaragona-tuni/Microservices-Dataset).
+The detection results are versioned under `dest/`; the statistics below are
+computed from them (regenerate with
+`python scripts/summarize_projects.py --format markdown`):
+
+| Project | Services | Files | LOC | Clone Sets |
+| --- | ---: | ---: | ---: | ---: |
+| [FudanSELab/train-ticket](https://github.com/FudanSELab/train-ticket) | 41 | 1,423 | 287,745 | 10,333 |
+| [FightPandemics/FightPandemics](https://github.com/FightPandemics/FightPandemics) | 5 | 436 | 50,820 | 755 |
+| [Microservice-API-Patterns/LakesideMutual](https://github.com/Microservice-API-Patterns/LakesideMutual) | 9 | 324 | 37,309 | 3,431 |
+| [lightstep/opentelemetry-examples](https://github.com/lightstep/opentelemetry-examples) | 28 | 75 | 34,962 | 1,343 |
+| [microservices-patterns/ftgo-application](https://github.com/microservices-patterns/ftgo-application) | 10 | 348 | 14,308 | 215 |
+| [stackroute/ibm-wave7-lifeline](https://github.com/stackroute/ibm-wave7-lifeline) | 10 | 207 | 8,914 | 169 |
+| [tgrall/redis-microservices-demo](https://github.com/tgrall/redis-microservices-demo) | 9 | 51 | 3,919 | 65 |
+
+**Services** counts the services identified from the Docker Compose
+configuration, **Files**/**LOC** cover the source files attributed to those
+services, and **Clone Sets** sums the detected clone sets over all analyzed
+languages. See [docs/dataset.md](docs/dataset.md) for detection settings and
+per-project notes.
+
+As a rough guide to runtime, the full analysis of Train Ticket — the largest
+system above — took about 43 minutes on a desktop machine with an Intel Core
+i5-14400F CPU; the smaller systems finish correspondingly faster.
+
 ## Documentation
 
 | Document                                                              | Contents                                          |

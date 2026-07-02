@@ -473,9 +473,13 @@ co-modification at merge-commit granularity; that is, clone fragments
 are regarded as co-modified when they are modified in the same merge
 commit. Clone detection uses CCFinderSW with a minimum matching
 token length of 50 and import/package declaration filtering enabled.
-In this snapshot, \textsc{CC4M} identifies 41 microservices, 1{,}423 source
-files, 10{,}333 clone sets;
-Table~\ref{tab:train_ticket} reports the per-language breakdown.
+In this snapshot, \textsc{CC4M} identifies 41 microservices, 1{,}423
+source files, and 10{,}333 clone sets, most of which are in Java and
+JavaScript code. The entire analysis took 43 minutes on a desktop
+machine with an Intel Core i5-14400F CPU.
+%In this snapshot, \textsc{CC4M} identifies 41 microservices, 1{,}423 source
+%files, 10{,}333 clone sets;
+%Table~\ref{tab:train_ticket} reports the per-language breakdown.
 %ここはコメントアウト候補
 The following three scenarios illustrate \textsc{CC4M} from different
 perspectives: Scenario 1 focuses on a duplicated booking workflow,
@@ -484,24 +488,47 @@ follow-up, and Scenario 3 on a repeatedly co-modified Account clone
 that may require further inspection.
 We also applied \textsc{CC4M} to six additional microservice systems
 selected from the microservice benchmark dataset~\cite{Amoroso2024MSR}.
-Further details of these systems are available in our project
+Table~\ref{tab:projects} summarizes the seven analyzed systems; further
+details are available in our project
 documentation.\footnote{\url{https://github.com/gg117e/CC4M/blob/main/docs/dataset.md}}
+%Further details of these systems are available in our project
+%documentation.
 
 \begin{table}[tb]
 \centering
-\caption{Per-language statistics for \textsc{Train Ticket}.}
-\label{tab:train_ticket}
-\begin{tabular}{lrrrrr}
+\caption{Summary of the analyzed microservice systems.}
+\label{tab:projects}
+% 値は scripts/summarize_projects.py --format latex で dest/ から再生成できる.
+\begin{tabular}{lrrrr}
 \toprule
-Language    & Services & Files & LOC       & Clone Sets & Clone Pairs \\
+Project & Services & Files & LOC & Clone Sets \\
 \midrule
-Go          & 1        & 2     & 57        & 0          & 0           \\
-Java        & 37       & 740   & 52{,}814  & 2{,}414    & 181{,}300   \\
-JavaScript  & 2        & 676   & 234{,}514 & 7{,}919    & 2{,}303{,}805 \\
-Python      & 1        & 5     & 360       & 0          & 0           \\
+\textsc{Train Ticket} & 41 & 1{,}423 & 287{,}745 & 10{,}333 \\
+FightPandemics & 5 & 436 & 50{,}820 & 755 \\
+Lakeside Mutual & 9 & 324 & 37{,}309 & 3{,}431 \\
+OpenTelemetry Examples & 28 & 75 & 34{,}962 & 1{,}343 \\
+FTGO Application & 10 & 348 & 14{,}308 & 215 \\
+IBM Wave7 Lifeline & 10 & 207 & 8{,}914 & 169 \\
+Redis Microservices Demo & 9 & 51 & 3{,}919 & 65 \\
 \bottomrule
 \end{tabular}
 \end{table}
+
+%\begin{table}[tb]
+%\centering
+%\caption{Per-language statistics for \textsc{Train Ticket}.}
+%\label{tab:train_ticket}
+%\begin{tabular}{lrrrrr}
+%\toprule
+%Language    & Services & Files & LOC       & Clone Sets & Clone Pairs \\
+%\midrule
+%Go          & 1        & 2     & 57        & 0          & 0           \\
+%Java        & 37       & 740   & 52{,}814  & 2{,}414    & 181{,}300   \\
+%JavaScript  & 2        & 676   & 234{,}514 & 7{,}919    & 2{,}303{,}805 \\
+%Python      & 1        & 5     & 360       & 0          & 0           \\
+%\bottomrule
+%\end{tabular}
+%\end{table}
 
 
 % 日本語メモ: 1 つ目のシナリオは, Scatter Plot で cross-service + Logic + co-modification
