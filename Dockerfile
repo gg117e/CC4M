@@ -1,7 +1,9 @@
 FROM python:3.12-slim
 
 # Runtime and build dependencies for CCFinderSW, CLAIM, GitHub Linguist, and
-# the Rust ccfindersw-parser helper.
+# the Rust ccfindersw-parser helper. golang-go is required to build the
+# `dockerfile` pip package from source on platforms without a prebuilt wheel
+# (e.g. linux/arm64 such as Apple Silicon).
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
         git \
@@ -17,6 +19,7 @@ RUN apt-get update \
         libicu-dev \
         build-essential \
         cargo \
+        golang-go \
     && rm -rf /var/lib/apt/lists/*
 
 ENV PYTHONUNBUFFERED=1 \

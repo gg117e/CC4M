@@ -73,6 +73,29 @@ Per-project commit caps (`MAX_ANALYZED_COMMITS` in `config.py`) appear in the **
 | [tgrall/redis-microservices-demo](https://github.com/tgrall/redis-microservices-demo) | Java, JavaScript, Python, TypeScript | Merge, no cap | No clones detected for Python and TypeScript |
 | [FightPandemics/FightPandemics](https://github.com/FightPandemics/FightPandemics) | JavaScript | Merge, last 10 | ~600 merge commits, capped to the 10 most recent |
 
+### Project Statistics
+
+Per-project statistics computed from the detection results under `dest/`.
+**Services** counts the services identified by CLAIM, **Files** and **LOC**
+cover the source files attributed to those services (summed over all analyzed
+languages), and **Clone Sets** sums the detected clone sets over all analyzed
+languages. Regenerate this table with
+`python scripts/summarize_projects.py --format markdown`.
+
+| Project | Services | Files | LOC | Clone Sets |
+| --- | ---: | ---: | ---: | ---: |
+| [FudanSELab/train-ticket](https://github.com/FudanSELab/train-ticket) | 41 | 1,423 | 287,745 | 10,333 |
+| [microservices-patterns/ftgo-application](https://github.com/microservices-patterns/ftgo-application) | 10 | 348 | 14,308 | 215 |
+| [lightstep/opentelemetry-examples](https://github.com/lightstep/opentelemetry-examples) | 28 | 75 | 34,962 | 1,343 |
+| [Microservice-API-Patterns/LakesideMutual](https://github.com/Microservice-API-Patterns/LakesideMutual) | 9 | 324 | 37,309 | 3,431 |
+| [stackroute/ibm-wave7-lifeline](https://github.com/stackroute/ibm-wave7-lifeline) | 10 | 207 | 8,914 | 169 |
+| [tgrall/redis-microservices-demo](https://github.com/tgrall/redis-microservices-demo) | 9 | 51 | 3,919 | 65 |
+| [FightPandemics/FightPandemics](https://github.com/FightPandemics/FightPandemics) | 5 | 436 | 50,820 | 755 |
+
+As a rough guide to runtime, the full analysis of `FudanSELab/train-ticket`
+(the largest system in the table) took about 43 minutes on a desktop machine
+with an Intel Core i5-14400F CPU.
+
 ### Why These Projects
 
 **FudanSELab/train-ticket** — The best-known and largest microservice benchmark, comprising tens of services. Ideal for evaluating how large-scale clones arise in complex systems. Only the Java results are published: the JavaScript scatter dataset is ~457 MB (bundled libraries inflate the clone count) and exceeds GitHub's per-file limit, so it is excluded from version control.
@@ -87,7 +110,7 @@ Per-project commit caps (`MAX_ANALYZED_COMMITS` in `config.py`) appear in the **
 
 **tgrall/redis-microservices-demo** — A Redis-backed, polyglot system mixing Node.js services and a Java system. Responsibilities are split into fine-grained services within the repository (for example, DB read/write services), making it convenient for small, focused validation.
 
-**FightPandemics/FightPandemics** — A large open-source social platform with a clearly separated backend and client. Good for observing how code clones arise in JavaScript/TypeScript projects (UI components, API routers, and the like). Because it has roughly 600 merge commits, analysis is capped to the 20 most recent.
+**FightPandemics/FightPandemics** — A large open-source social platform with a clearly separated backend and client. Good for observing how code clones arise in JavaScript/TypeScript projects (UI components, API routers, and the like). Because it has roughly 600 merge commits, analysis is capped to the 10 most recent.
 
 
 ## Demo Data Shipped with This Artifact
