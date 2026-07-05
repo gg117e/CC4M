@@ -8,7 +8,10 @@ serves an interactive scatter plot with metric-based filtering.
 
 > **Screencast:** https://www.youtube.com/watch?v=0xOIQPFbkUg
 
-> **Paper:** [ICSME 2026 paper (PDF)](paper/ICSME2026_CC4M_paper.pdf). LaTeX source in [paper/](paper/).
+> **Paper:** Accepted at the ICSME 2026 Tool Demonstration track:
+> https://conf.researchr.org/details/icsme-2026/icsme-2026-tool-demonstration/22/CC4M-Code-Clone-Analysis-and-Visualization-for-Microservices
+> <!-- TODO: replace with the IEEE Xplore DOI link once published -->
+
 
 ## Quick Start
 
