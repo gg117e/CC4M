@@ -11,5 +11,7 @@ Curated documentation for CC4M.
 | [declaration_filtering.md](declaration_filtering.md) | Declaration-line filtering before clone detection |
 | [file_classification.md](file_classification.md) | File-path / service / file-type handling |
 | [dataset.md](dataset.md) | Dataset, target selection, analyzed commits, demo data |
+| [line_tracking.md](line_tracking.md) | How changed lines and clone fragments are tracked between analyzed commits |
+| [PROGRESS.md](PROGRESS.md) | Implementation log: what was changed, when, and why (Japanese) |
 
 The top-level [../README.md](../README.md) is the project entry point.

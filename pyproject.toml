@@ -16,3 +16,6 @@ dev = [
 [tool.pytest.ini_options]
 norecursedirs = ["dest"]
 pythonpath = ["src"]
+markers = [
+    "slow: 外部コマンド (git など) に依存するテスト. `-m \"not slow\"` でスキップできる",
+]

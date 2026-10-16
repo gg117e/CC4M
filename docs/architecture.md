@@ -36,7 +36,8 @@ writes into `dest/*` and the next reads it.
    git diffs. Outputs: `dest/clones_json/`, `dest/moving_lines/`, `dest/csv/`.
 2. **analyze-cc** (`modules.analyze_cc`) - correspond clone fragments across
    adjacent commits and classify each as added / modified / stable. Output:
-   `dest/modified_clones/`.
+   `dest/modified_clones/`. The line-diff input (`modules.moving_lines`) and the
+   classification rules are described in [line_tracking.md](line_tracking.md).
 3. **analyze-modification** (`modules.analyze_modification`) - aggregate the
    per-commit modification history onto the latest clones. Output: `dest/csv/`.
 

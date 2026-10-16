@@ -6,7 +6,6 @@ import traceback
 import json
 import logging
 import time
-from typing import Optional, Tuple
 
 
 def _find_repo_root(start: Path) -> Path:
@@ -21,6 +20,11 @@ sys.path.append(str(project_root))
 sys.path.append(str(project_root / "src"))
 from modules.github_linguist import get_exts
 from modules.source_filter import apply_filter
+from modules.moving_lines import (
+    compute_moving_lines,
+    load_moving_lines,
+    save_moving_lines,
+)
 from config import (
     ANTLR_LANGUAGE,
     CCFINDERSW_JAR,
@@ -57,78 +61,19 @@ def _write_status(message: str, log=None) -> None:
         logger.info(message)
 
 
-def parse_diff_str(diff: str) -> Optional[Tuple[list[str], int, int]]:
-    """diff 文字列からハンク行と開始行番号を抽出する。"""
-    diff_at_split = diff.split("@@")
-    if len(diff_at_split) < 3:
-        return None
-    try:
-        hunk_range_split = diff_at_split[1].replace("+", "").replace("-", "").split(" ")
-        hunk_range_old = hunk_range_split[1]
-        hunk_range_new = hunk_range_split[2]
-        old_line_count = int(hunk_range_old.split(",")[0])
-        new_line_count = int(hunk_range_new.split(",")[0])
-    except (IndexError, ValueError):
-        return None
-    hunk_lines = diff_at_split[2].split("\n")
-    return hunk_lines, old_line_count, new_line_count
+def find_moving_lines(commit: git.Commit, prev: git.Commit, name: str) -> None:
+    """2 つのコミット間で追加・削除・変更された行を収集して保存する.
 
-
-def find_moving_lines(commit: git.Commit, prev: git.Commit, name: str):
-    """2 つのコミット間で追加・削除・変更された行を収集して保存する。"""
-    diff_hunks = prev.diff(commit, create_patch=True)
-    output_result = []
-    for diff_hunk in diff_hunks:
-        if diff_hunk.diff:
-            child_path = diff_hunk.b_path
-            parent_path = diff_hunk.a_path
-            try:
-                result = parse_diff_str(diff_hunk.diff.decode("utf-8"))
-                if result is None:
-                    continue
-            except UnicodeDecodeError:
-                logger.warning("diff.diff.decode('utf-8')のデコードに失敗しました．")
-                logger.warning(str(diff_hunk.diff))
-                continue
-            hunk, old_file_line_count, new_file_line_count = result
-            potential_inserted_lines: list[int] = []
-            potential_deleted_lines: list[int] = []
-            for line in hunk:
-                if line.startswith("+"):
-                    potential_inserted_lines.append(new_file_line_count)
-                    new_file_line_count += 1
-                elif line.startswith("-"):
-                    potential_deleted_lines.append(old_file_line_count)
-                    old_file_line_count += 1
-                else:
-                    old_file_line_count += 1
-                    new_file_line_count += 1
-            inserted_lines = []
-            deleted_lines = []
-            modified_lines = []
-            for inserted_line in potential_inserted_lines:
-                if inserted_line not in potential_deleted_lines:
-                    inserted_lines.append(inserted_line)
-                else:
-                    modified_lines.append(inserted_line)
-            for deleted_line in potential_deleted_lines:
-                if deleted_line not in potential_inserted_lines:
-                    deleted_lines.append(deleted_line)
-            output_result.append(
-                {
-                    "child_path": child_path,
-                    "parent_path": parent_path,
-                    "inserted_lines": inserted_lines,
-                    "deleted_lines": deleted_lines,
-                    "modified_lines": modified_lines,
-                }
-            )
-    if output_result:
-        dest_dir = project_root / "dest/moving_lines" / name
-        dest_dir.mkdir(parents=True, exist_ok=True)
-        dest_file = dest_dir / f"{commit.hexsha}-{prev.hexsha}.json"
-        with open(dest_file, "w") as f:
-            json.dump(output_result, f)
+    Args:
+        commit: 古い側 (親) のコミット.
+        prev: 新しい側 (子) のコミット. 解析対象コミット列で 1 つ前に処理したもの.
+        name: ``owner.repo`` 形式のプロジェクト名.
+    """
+    hunks = compute_moving_lines(parent_commit=commit, child_commit=prev)
+    dest_file = (
+        project_root / "dest/moving_lines" / name / f"{commit.hexsha}-{prev.hexsha}.json"
+    )
+    save_moving_lines(dest_file, hunks)
 
 
 def convert_language_for_ccfindersw(language: str) -> str:
@@ -319,8 +264,8 @@ def collect_datas_of_repo(
                 / name
                 / f"{commit.hexsha}-{prev_commit.hexsha}.json"
             )
-            if not moving_lines_file.exists():
-                # 修正を保存
+            if load_moving_lines(moving_lines_file) is None:
+                # 未計算, または旧形式 (v1) なら再計算して保存
                 find_moving_lines(commit, prev_commit, name)
             prev_commit = commit
         if detection_count:

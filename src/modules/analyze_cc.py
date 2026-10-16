@@ -1,8 +1,11 @@
 import json
+import logging
 import sys
 from pathlib import Path
 
 import git
+
+logger = logging.getLogger(__name__)
 
 def _find_repo_root(start: Path) -> Path:
     for parent in [start] + list(start.parents):
@@ -15,6 +18,7 @@ project_root = _find_repo_root(Path(__file__).resolve())
 sys.path.append(str(project_root))
 sys.path.append(str(project_root / "src"))
 from modules.util import FileMapper
+from modules.moving_lines import load_moving_lines
 
 
 class CorrespondedLines:
@@ -23,7 +27,19 @@ class CorrespondedLines:
     def __init__(self, hunks: list[dict], child_filemap: FileMapper, parent_filemap: FileMapper):
         self.corresponded_lines = self._correspond_lines(hunks, child_filemap, parent_filemap)
         self.hunks = hunks
-    
+        # 座標の約束は modules.moving_lines を参照 (inserted/modified は子側, deleted/modified_parent は親側)
+        self._inserted = self._index_lines(hunks, "child_path", "inserted_lines")
+        self._deleted = self._index_lines(hunks, "parent_path", "deleted_lines")
+        self._modified = self._index_lines(hunks, "child_path", "modified_lines")
+        self._modified_parent = self._index_lines(hunks, "parent_path", "modified_parent_lines")
+
+    @staticmethod
+    def _index_lines(hunks: list[dict], path_key: str, lines_key: str) -> dict[str, set[int]]:
+        index: dict[str, set[int]] = {}
+        for h in hunks:
+            index.setdefault(h.get(path_key), set()).update(h.get(lines_key, []))
+        return index
+
     def get_parent_line(self, child_path: str, child_line: int):
         if child_path not in self.corresponded_lines.keys():
             return child_line
@@ -39,28 +55,20 @@ class CorrespondedLines:
         return True
     
     def is_line_deleted(self, parent_path: str, parent_line: int):
-        for diff in self.hunks:
-            if diff["parent_path"] != parent_path:
-                continue
-            if parent_line in diff["deleted_lines"]:
-                return True
-        return False
-    
+        """親側の行が削除されたか (親座標)."""
+        return parent_line in self._deleted.get(parent_path, ())
+
     def is_line_added(self, child_path: str, child_line: int):
-        for diff in self.hunks:
-            if diff["child_path"] != child_path:
-                continue
-            if child_line in diff["inserted_lines"]:
-                return True
-        return False
-    
-    def is_line_modified(self, path: str, line: int):
-        for diff in self.hunks:
-            if diff["child_path"] != path:
-                continue
-            if line in diff["modified_lines"]:
-                return True
-        return False
+        """子側の行が新規に挿入されたか (子座標)."""
+        return child_line in self._inserted.get(child_path, ())
+
+    def is_line_modified(self, child_path: str, child_line: int):
+        """子側の行が置換で書き換えられたか (子座標)."""
+        return child_line in self._modified.get(child_path, ())
+
+    def is_parent_line_modified(self, parent_path: str, parent_line: int):
+        """親側の行が置換で書き換えられたか (親座標)."""
+        return parent_line in self._modified_parent.get(parent_path, ())
     
     def get_fragment_loc_of_parent(self, child_path: str, child_start_line: int, child_end_line: int):
         if child_path not in self.corresponded_lines.keys():
@@ -347,7 +355,7 @@ def correspond_clonesets(
                 if corresponded_lines.is_line_deleted(parent_path, l):
                     parent_deleted = True
                     break
-                if corresponded_lines.is_line_modified(parent_path, l):
+                if corresponded_lines.is_parent_line_modified(parent_path, l):
                     parent_modified = True
                     break
 
@@ -398,7 +406,12 @@ def correspond_clonesets(
 def analyze_commit(name: str, language: str, commit: git.Commit, prev: git.Commit) -> bool:
     """単一コミット間でクローン差分を算出し保存する。"""
     workdir = project_root / "dest/projects" / name
-    print(f"{commit.hexsha}-{prev.hexsha}")
+    logger.debug("analyze_commit: %s-%s", commit.hexsha, prev.hexsha)
+    dest_file = (
+        project_root / "dest/modified_clones" / name / f"{commit.hexsha}-{prev.hexsha}" / f"{language}.json"
+    )
+    # 以前の実行結果が残っていると analyze_modification がそれを読むため, 先に消しておく
+    dest_file.unlink(missing_ok=True)
     # childのCCFinderSWファイルの読み込み
     child_ccfsw_file = project_root / "dest/clones_json" / name / prev.hexsha / f"{language}.json"
     with open(child_ccfsw_file, "r") as f:
@@ -412,10 +425,12 @@ def analyze_commit(name: str, language: str, commit: git.Commit, prev: git.Commi
     parent_filemap = FileMapper(parent_ccfsw["file_data"], str(workdir))
     # コミット間のLineDiffファイルの読み込み
     line_diff_file = project_root / "dest/moving_lines" / name / f"{commit.hexsha}-{prev.hexsha}.json"
-    if not line_diff_file.exists():
+    hunks = load_moving_lines(line_diff_file)
+    if hunks is None:
+        logger.warning(
+            "moving_lines が無いか旧形式です. collect ステップを再実行してください: %s", line_diff_file
+        )
         return False
-    with open(line_diff_file, "r") as f:
-        hunks = json.load(f)
     # 修正がなければこのコミットの処理は終了
     if len(hunks) == 0:
         return False
@@ -433,9 +448,8 @@ def analyze_commit(name: str, language: str, commit: git.Commit, prev: git.Commi
     modified_clones = correspond_clonesets(corresponded_fragments, corresponded_lines, child_ccfsw["clone_sets"], parent_ccfsw["clone_sets"], child_filemap, parent_filemap)
 
     # 保存
-    dest_dir = project_root / "dest/modified_clones" / name / f"{commit.hexsha}-{prev.hexsha}"
-    dest_dir.mkdir(parents=True, exist_ok=True)
-    with open(dest_dir / f"{language}.json", "w") as f:
+    dest_file.parent.mkdir(parents=True, exist_ok=True)
+    with open(dest_file, "w") as f:
         json.dump(modified_clones, f, indent=4)
     
     # 成功

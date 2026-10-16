@@ -123,7 +123,14 @@ For review, this branch bundles a small precomputed `dest/` for `FudanSELab.trai
 * `dest/clone_metrics/`
 * `dest/analysis_params/`
 
-These files are enough to populate the scatter plot and all metrics without running the pipeline. The full source checkout is not bundled. To make the source-code view line up with the bundled demo data, clone the analyzed revision:
+These files are enough to populate the scatter plot and all metrics without running the pipeline.
+
+> **Known issue (2026-10-16):** the bundled results were generated before a fix
+> to the line-tracking step (see [line_tracking.md](line_tracking.md) and
+> [PROGRESS.md](PROGRESS.md)). Clone sets, services, file categories, and
+> clone-size metrics are unaffected, but co-modification fields
+> (`modified_commits`, `comodified`, `comod_*`) are unreliable until the
+> results are regenerated with the current pipeline. The full source checkout is not bundled. To make the source-code view line up with the bundled demo data, clone the analyzed revision:
 
 ```bash
 mkdir -p dest/projects
