@@ -113,7 +113,7 @@ co-modification の結果を左右する 3 つのバグがあった.
 - TODO(gen): 同梱の `dest/` (7 プロジェクト分の enriched_fragments, scatter, clone_metrics) を修正後のパイプラインで再生成する.
   CCFinderSW を含む全ステップの再実行が必要 (train-ticket で約 43 分).
 - TODO(gen): 再生成の前後で co-modification の件数がどう変わるかを記録する.
-- TODO(gen): 先輩の SANER 投稿の研究が `collect_datas.py` / `analyze_cc.py` を使っているか確認し,
+- TODO(gen): CC4M の co-modification 処理を使った研究室内の研究が `collect_datas.py` / `analyze_cc.py` を使っているか確認し,
   使っていれば `docs/notices/2026-10-16_co-modification_bug.md` を共有する.
 - TODO(gen): リネーム, 移動したファイルの追跡 (`git diff -M` の結果を使う).
 - TODO(gen): Scenario 1, 3 を修正後のコードで再判定する.
